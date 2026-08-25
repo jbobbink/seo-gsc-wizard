@@ -1,0 +1,21 @@
+{
+  "name": "seo-gsc-wizard",
+  "description": "Google Search Console, Bing Webmaster and GA4 analytics for Claude: 100+ SEO tools plus guided workflows for site audits, content decay, keyword cannibalization, quick wins, indexing health and weekly reporting.",
+  "version": "1.0.0",
+  "author": {
+    "name": "GSC Wizard",
+    "url": "https://www.gscwizard.com"
+  },
+  "homepage": "https://www.gscwizard.com",
+  "repository": "https://github.com/jbobbink/seo-gsc-wizard",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "google-search-console",
+    "search-console",
+    "bing-webmaster",
+    "ga4",
+    "analytics",
+    "mcp"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gsc-wizard": {
+      "type": "http",
+      "url": "https://mcp.gscwizard.com/mcp"
+    }
+  }
+}

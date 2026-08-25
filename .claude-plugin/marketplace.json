@@ -1,0 +1,15 @@
+{
+  "name": "seo-gsc-wizard",
+  "description": "GSC Wizard: Google Search Console, Bing Webmaster and GA4 SEO analytics for Claude",
+  "owner": {
+    "name": "GSC Wizard",
+    "url": "https://www.gscwizard.com"
+  },
+  "plugins": [
+    {
+      "name": "seo-gsc-wizard",
+      "source": "./",
+      "description": "Google Search Console, Bing Webmaster and GA4 analytics for Claude: 100+ SEO tools plus guided workflows for site audits, content decay, keyword cannibalization, quick wins, indexing health and weekly reporting."
+    }
+  ]
+}
