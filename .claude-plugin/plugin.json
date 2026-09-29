@@ -1,21 +1,35 @@
 {
   "name": "seo-gsc-wizard",
-  "description": "Google Search Console, Bing Webmaster and GA4 analytics for Claude: 100+ SEO tools plus guided workflows for site audits, content decay, keyword cannibalization, quick wins, indexing health and weekly reporting.",
-  "version": "1.0.0",
+  "displayName": "SEO GSC Wizard",
+  "description": "Analyze your Google Search Console, Bing and GA4 data in Claude. Run SEO site audits, find content decay, cannibalization and quick wins, check indexing, and get weekly reports.",
+  "version": "1.0.1",
+  "icon": "./assets/icon.png",
   "author": {
     "name": "GSC Wizard",
+    "email": "support@gscwizard.com",
     "url": "https://www.gscwizard.com"
   },
   "homepage": "https://www.gscwizard.com",
+  "documentationUrl": "https://www.gscwizard.com/docs/mcp-and-chatgpt.html",
+  "supportUrl": "https://www.gscwizard.com/feedback.html",
+  "privacyPolicyUrl": "https://www.gscwizard.com/privacy.html",
+  "termsOfServiceUrl": "https://www.gscwizard.com/terms.html",
   "repository": "https://github.com/jbobbink/seo-gsc-wizard",
   "license": "MIT",
   "keywords": [
     "seo",
     "google-search-console",
+    "gsc",
     "search-console",
-    "bing-webmaster",
+    "bing-webmaster-tools",
+    "google-analytics",
     "ga4",
-    "analytics",
-    "mcp"
+    "site-audit",
+    "technical-seo",
+    "keyword-rankings",
+    "content-decay",
+    "keyword-cannibalization",
+    "indexing",
+    "seo-reporting"
   ]
 }
