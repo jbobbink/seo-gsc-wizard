@@ -1,0 +1,30 @@
+{
+  "name": "seo-gsc-wizard",
+  "displayName": "SEO GSC Wizard",
+  "version": "1.0.1",
+  "description": "Analyze your Google Search Console, Bing and GA4 data in Cursor. Run SEO site audits, find content decay, cannibalization and quick wins, check indexing, and get weekly reports.",
+  "author": {
+    "name": "GSC Wizard",
+    "email": "support@gscwizard.com",
+    "url": "https://www.gscwizard.com"
+  },
+  "homepage": "https://www.gscwizard.com",
+  "repository": "https://github.com/jbobbink/seo-gsc-wizard",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "google-search-console",
+    "gsc",
+    "search-console",
+    "bing-webmaster-tools",
+    "google-analytics",
+    "ga4",
+    "site-audit",
+    "technical-seo",
+    "content-decay",
+    "keyword-cannibalization",
+    "indexing",
+    "seo-reporting"
+  ],
+  "logo": "assets/icon.png"
+}

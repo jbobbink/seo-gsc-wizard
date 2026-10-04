@@ -1,4 +1,5 @@
 ---
+name: cannibalization
 description: Detect and resolve keyword cannibalization in Google Search Console data via the GSC Wizard MCP server. Finds queries where multiple pages of one property compete for the same search, compares the contenders on clicks, impressions, CTR, and position, picks a canonical winner per cluster, and recommends fixes (consolidate, canonicalize, differentiate intent, adjust internal anchors). Use when the user mentions cannibalization, keyword cannibalization, pages competing for the same keyword, multiple URLs ranking for one query, or asks which page should rank for a keyword.
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: quick-wins
 description: Find and rank quick-win SEO opportunities for a Search Console property by combining opportunity scoring, position distribution, CTR-curve underperformance, and striking-distance click-upside estimates from the GSC Wizard MCP server, then merge everything into one prioritized action list with expected impact and effort. Use when the user asks for quick wins, low hanging fruit, easy SEO improvements, striking distance keywords, or which pages or queries to optimize first for the fastest gains.
 ---
 

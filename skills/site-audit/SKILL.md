@@ -1,4 +1,5 @@
 ---
+name: site-audit
 description: Run a comprehensive SEO health audit of a single Search Console property using the GSC Wizard MCP tools, covering a 28-day performance overview with comparison, ranking mix, significant movers, anomalies, content decay, cannibalization, opportunity scoring, and Core Web Vitals, synthesized into a health verdict, top risks, top opportunities, and a prioritized action plan. Use when the user says things like "audit my site", "SEO health check", "how is my site doing in search", "give me a full SEO audit", or asks for an overall assessment of a property's organic search health.
 ---
 

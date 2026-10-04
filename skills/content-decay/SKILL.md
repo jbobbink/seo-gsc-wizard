@@ -1,4 +1,5 @@
 ---
+name: content-decay
 description: Find, triage, and build recovery plans for decaying content in Google Search Console using the GSC Wizard MCP tools (get_decay_overview, find_decaying_content, per-page drill-downs, optional traffic forecast). Use when the user asks about decaying content, pages losing traffic, content refresh candidates, which pages are dying, declining organic clicks, or wants a content refresh or recovery plan.
 ---
 

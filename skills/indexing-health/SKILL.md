@@ -1,4 +1,5 @@
 ---
+name: indexing-health
 description: Run an indexing and crawl health check for a Search Console property via the GSC Wizard MCP server; reviews tracked-URL indexing status, sitemap coverage, and quota-aware targeted URL inspections, optionally Bing crawl issues and IndexNow resubmission, then reports issues grouped by cause with concrete fixes. Use when the user mentions indexing problems, pages not indexed, deindexed or dropped pages, crawl issues, sitemap coverage, or asks "is Google indexing my site".
 ---
 

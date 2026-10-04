@@ -1,0 +1,18 @@
+{
+  "name": "seo-gsc-wizard",
+  "owner": {
+    "name": "GSC Wizard",
+    "email": "support@gscwizard.com"
+  },
+  "metadata": {
+    "description": "GSC Wizard plugin for Cursor: Google Search Console, Bing and GA4 SEO analysis via the GSC Wizard MCP server.",
+    "version": "1.0.1"
+  },
+  "plugins": [
+    {
+      "name": "seo-gsc-wizard",
+      "source": "./",
+      "description": "SEO audits, content decay, cannibalization, quick wins, indexing health and weekly reports from your Search Console data."
+    }
+  ]
+}

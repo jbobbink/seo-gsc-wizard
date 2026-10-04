@@ -1,4 +1,5 @@
 ---
+name: weekly-report
 description: Produce a weekly SEO performance digest for a Search Console property using the GSC Wizard MCP tools; compares a lag-adjusted 7-day window against the prior week, surfaces headline metrics, top query and page movers in both directions, ranking changes, trend breaks, Google algorithm update overlap, and logged site changes, then delivers a concise digest with watch items and recommendations. Use when the user asks for a weekly report, a weekly SEO update, "how did we do this week", a week-over-week summary, or a recurring performance digest for a site.
 ---
 
