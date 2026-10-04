@@ -1,0 +1,11 @@
+{
+  "name": "seo-gsc-wizard",
+  "version": "1.0.1",
+  "description": "Analyze your Google Search Console, Bing and GA4 data. Run SEO site audits, find content decay, cannibalization and quick wins, check indexing, and get weekly reports.",
+  "mcpServers": {
+    "gsc-wizard": {
+      "httpUrl": "https://mcp.gscwizard.com/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

@@ -41,6 +41,14 @@ Or directly from this repository:
 
 On first use, Claude Code opens your browser to authorize the connection (OAuth 2.1). Approve access with your GSC Wizard account and you are done; tokens are stored and refreshed by Claude Code. If the connection ever needs re-authorizing, run `/mcp` and select `gsc-wizard`.
 
+## Other editors and agents
+
+The same repository works as a plugin or extension elsewhere; all of them connect to `https://mcp.gscwizard.com/mcp` and sign in through the browser.
+
+- **Cursor:** install from the Cursor marketplace, or point Cursor at this repository (manifest in `.cursor-plugin/`, server in `mcp.json`).
+- **Gemini CLI:** `gemini extensions install https://github.com/jbobbink/seo-gsc-wizard`, then `/mcp auth gsc-wizard` if the browser does not open on first use.
+- **Cline and other MCP clients:** add the remote server URL above; see [llms-install.md](llms-install.md).
+
 ## Example prompts
 
 - "Audit sc-domain:example.com and tell me what to fix first"
