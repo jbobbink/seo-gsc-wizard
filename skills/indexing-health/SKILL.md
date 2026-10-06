@@ -17,7 +17,7 @@ Diagnose why pages are missing from Google's (and optionally Bing's) index and p
 
 4. **Check inspection quota BEFORE inspecting anything.** Call `get_inspection_quota` and report the remaining daily quota for this property. Plan the inspection batch so it uses well under half of what remains; never spend the whole quota in this workflow. If the quota is exhausted or nearly so, skip step 5, rely on step 6 instead, and tell the user the quota is a daily per-property limit (2,000 inspections per day) that resets each day, so they can rerun this check tomorrow.
 
-5. **Targeted bulk inspection.** Build a small suspect set, typically 5 to 15 URLs and never more than 25: lost or never-indexed URLs from the tracker, sitemap URLs with zero impressions, and any URLs the user named. Call `bulk_inspect_urls` on that set. Group the results by root cause from the verdict and coverage state, for example:
+5. **Targeted bulk inspection.** Build a small suspect set, typically 5 to 15 URLs and never more than 25: lost or never-indexed URLs from the tracker, sitemap URLs with zero impressions, and any URLs the user named. Call `bulk_inspect_urls` on that set. If it is refused because the connection uses a read-only API key, call `inspect_url` for each URL instead, for at most 10 URLs, and mention that batch inspection needs a read & write key. Group the results by root cause from the verdict and coverage state, for example:
    - Crawled - currently not indexed
    - Discovered - currently not indexed (not yet crawled)
    - Excluded by noindex
@@ -49,3 +49,7 @@ End with a short prioritized list of concrete recommendations (highest impact fi
 ## Error handling
 
 If any tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required. If a single tool fails for another reason, report it, skip that step, and continue with the rest of the check.
+
+## Grounding
+
+Every number you report must name the tool it came from and the date range it covers, for example "clicks 12,340 (`get_site_summary`, 2026-09-21 to 2026-09-27)". For a table, state the tool and date range once on the line above it. If you derive a figure yourself (a delta, a sum, a share), say so and name the tool outputs it was computed from. Never report a number no tool returned.

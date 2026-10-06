@@ -52,3 +52,7 @@ Optional user input: `$ARGUMENTS` may contain a property (site URL or domain), a
 - If `analyze_cannibalization` returns clusters that are just protocol/host/hash variants of the same URL, call that out as a canonicalization or migration hygiene issue rather than true content cannibalization.
 - A branded or navigational query where the homepage plus one deep page both rank is usually sitelinks behavior, not cannibalization; skip it or mention it only in passing.
 - If the contenders look like language or country variants (for example `/en/` and `/de/` paths), verify with `query_search_analytics` using `dimensions: ["country", "page"]` and the same query filter; pages each winning their own market is an hreflang or geo-targeting matter, not cannibalization.
+
+## Grounding
+
+Every number you report must name the tool it came from and the date range it covers, for example "clicks 12,340 (`get_site_summary`, 2026-09-21 to 2026-09-27)". For a table, state the tool and date range once on the line above it. If you derive a figure yourself (a delta, a sum, a share), say so and name the tool outputs it was computed from. Never report a number no tool returned.

@@ -53,3 +53,7 @@ Identify which content is losing search traffic, diagnose why per page, and prod
 - Present multi-row results as compact markdown tables; keep prose for interpretation, and keep tables to the columns that matter (page/query, clicks before/after, change %, position before/after).
 - Do not fabricate rows the tools did not return. If `find_decaying_content` returns nothing above the threshold, say the property shows no meaningful decay and stop after step 3.
 - If a tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required.
+
+## Grounding
+
+Every number you report must name the tool it came from and the date range it covers, for example "clicks 12,340 (`get_site_summary`, 2026-09-21 to 2026-09-27)". For a table, state the tool and date range once on the line above it. If you derive a figure yourself (a delta, a sum, a share), say so and name the tool outputs it was computed from. Never report a number no tool returned.

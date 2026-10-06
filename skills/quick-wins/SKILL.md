@@ -44,3 +44,7 @@ None of these four tools accept dimension filters. If the user gave a focus hint
 2. Show the merged list as a compact markdown table: query, page (from the Step 4 mapping; blank if unmatched), current position, impressions, CTR, signals present, estimated extra clicks, effort. CTR values from the tools are already percentages on a 0-100 scale; never multiply them by 100.
 3. Keep prose for interpretation only: which items reinforce, what the CTR curve implies, any caveats about the recent-days lag.
 4. End with a short prioritized list of concrete recommendations, numbered, each naming the specific query or page, the action (for example "rewrite the title tag to include X", "add internal links from Y"), and the expected payoff. Cap it at 5-8 actions so it stays actionable.
+
+## Grounding
+
+Every number you report must name the tool it came from and the date range it covers, for example "clicks 12,340 (`get_site_summary`, 2026-09-21 to 2026-09-27)". For a table, state the tool and date range once on the line above it. If you derive a figure yourself (a delta, a sum, a share), say so and name the tool outputs it was computed from. Never report a number no tool returned.

@@ -47,3 +47,7 @@ Produce these four sections, in order:
 - If any call fails with an authentication or subscription error, stop and tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required.
 - If the property is not found, re-run `list_sites` and offer the closest matches instead of guessing a URL format.
 - If a single analysis tool fails for another reason, report the gap in the relevant section and complete the audit with the remaining data.
+
+## Grounding
+
+Every number you report must name the tool it came from and the date range it covers, for example "clicks 12,340 (`get_site_summary`, 2026-09-21 to 2026-09-27)". For a table, state the tool and date range once on the line above it. If you derive a figure yourself (a delta, a sum, a share), say so and name the tool outputs it was computed from. Never report a number no tool returned.
