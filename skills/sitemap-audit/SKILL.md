@@ -9,7 +9,7 @@ Check the sitemaps a property has submitted, measure how much of one sitemap Goo
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Note the property's `gscScope` from `list_sites` ("full" or "readonly"): step 6 depends on it. For the Bing side, `list_bing_sites` shows which sites Bing has verified (`isVerified` in `siteDetails`) and answers `notConfigured: true` when no Bing Webmaster API key is set up.
+1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Note the property's `gscScope` from `list_sites` ("full" or "readonly"): step 6 depends on it. For the Bing side, `list_bing_sites` shows which sites Bing has verified (`isVerified` in `siteDetails`) and answers `notConfigured: true` when Bing Webmaster Tools is not connected.
 
 2. **Submitted sitemaps.** Call `list_sitemaps` with `siteUrl`. Read `sitemaps[]`, sorted by `path`: `lastSubmitted`, `lastDownloaded`, `isPending`, `isSitemapsIndex`, `type`, `warnings`, `errors`, and `contents[]` with `type` and `submitted` per content type.
    - Google has deprecated `contents[].indexed` and it typically reads 0, so never present it as an indexed count or as evidence that nothing is indexed.
@@ -39,14 +39,14 @@ Check the sitemaps a property has submitted, measure how much of one sitemap Goo
    Do not invent a verdict for a URL with no stored row; the indexing-health skill inspects those within quota.
 
 5. **Bing side.** Call `get_bing_feeds` with `siteUrl`.
-   - `notConfigured: true`: say no Bing Webmaster API key is set up for this property in GSC Wizard, relay the `hint`, and continue.
+   - `notConfigured: true`: say Bing Webmaster Tools is not connected for this property in the GSC Wizard app, relay the `hint`, and continue.
    - Otherwise read `feeds[]`, sorted by URL: `url`, `status` (Success, Pending, Warning or Error), `type` (Sitemap, RSS, Atom and so on), `submitted`, `lastCrawled` and `urlCount`. A date of 1601-01-01 is Bing's empty value, not a real date, and `emptyBecause` means Bing lists no feed at all.
    - Compare the two engines: a sitemap Google has and Bing lacks, or an Error status only on Bing, goes into the recommendations.
 
 6. **Submit or resubmit (write, confirm first).** Only when the user asks, or when step 2 found no sitemap or a pending or error-state one that the user wants refetched.
    - Before calling, list the exact sitemap URLs and ask the user to confirm. Explain what the call does: `submit_sitemap` registers already-published sitemap URLs with Google (it never generates or hosts a file), queues a download, is idempotent, does not index anything, and Google reports warnings and errors only after it has downloaded the file, so a fresh submission normally comes back pending.
    - Each URL in `sitemapUrls` must be absolute, on the property host or a subdomain, and already reachable; up to 20 per call.
-   - Google refuses it when the connection's `gscScope` is readonly (the tool refuses before sending anything and its message names "Enable full access" on the Account page in the app), and a read-only API key refuses it too. In both cases say this step needs full access or a read & write key and continue with the read-only parts.
+   - Google refuses it when the connection's `gscScope` is readonly (the tool refuses before sending anything and its message names "Enable full access" on the Account page in the app), and a read-only connection refuses it too. In both cases say this step needs full access or a write access and continue with the read-only parts.
    - Read `submitted`, `failed`, `results[]` (`sitemapUrl`, `accepted`, `confirmed`, `isPending`, `warnings`, `errors`, or `error` for a rejected one), `notAttempted` with `stopReason` when a rate limit or permission refusal stopped the batch, `message` and `actions`. Tell the user to re-check `list_sitemaps` in a few hours for warnings and errors.
 
 ## Output

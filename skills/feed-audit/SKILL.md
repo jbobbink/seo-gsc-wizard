@@ -22,7 +22,7 @@ Audit the Merchant Center feed behind one property: the Feed Score with its fail
    - Before calling it, say what it does (it queues 21 deterministic checks over the synced catalog plus a crawl of the product pages on the owner-approved hosts, scored 0-100; the crawl spends the site's crawl budget, a large catalog can take hours, and each user may start at most 3 runs per UTC day) and ask the user to confirm.
    - Call `run_feed_audit` with `siteUrl`, adding `force: true` only when the user wants to override the 28-day cadence; it never bypasses the one-run-per-property-per-day rule or a run in progress.
    - Read `enqueued` and `runDate`, the job handle. `enqueued: false` carries a `skipReason`: `run_in_progress` (its summary is in `run`), `run_exists_today`, `recent_run` (inside the cadence; offer `force: true` and ask again) or `already_queued`. A call that queues nothing does not count against the daily three.
-   - If the call is refused because the connection uses a read-only API key, say this step needs a read & write key and continue with the read-only parts.
+   - If the call is refused because the connection is read-only, say this step needs write access and continue with the read-only parts.
    - The tool returns the handle, never results, so do not poll in a loop: tell the user the run is queued, that it can take hours for a large catalog, and that `get_feed_audit_results` with that `runDate` shows `run.status` moving through `pending`, `crawling` and `scoring` to `completed`; if the user chooses to wait, check once after a pause rather than repeatedly.
    A sync paused for lost Merchant Center access is refused as `bad_request` with the pause wording, and Merchant Center connected on another Google login answers `notConfigured` with reason `gmc_on_other_account`, because the audit runs through the sync.
 
@@ -63,7 +63,7 @@ If any tool call fails with an authentication or subscription error, tell the us
 
 Merchant Center is an optional connection, so these tools answer `notConfigured: true` with a `reason` rather than erroring:
 - `no_scope`: Merchant Center is not connected in the GSC Wizard app yet.
-- `credentials_revoked`: the consent exists but Google rejects the stored credentials; reconnect the Google account on the Account page.
+- `credentials_revoked`: the consent exists but Google rejects the saved connection; reconnect the Google account on the Account page.
 - `no_account`: no Merchant Center account is linked to this site; link one in the app.
 - `gmc_on_other_account`: the scope sits on another Google login than the property's Search Console one, so the sync and the audit cannot run through it.
 

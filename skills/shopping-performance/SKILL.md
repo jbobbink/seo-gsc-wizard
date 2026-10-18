@@ -66,7 +66,7 @@ If any tool call fails with an authentication or subscription error, tell the us
 
 Merchant Center is an optional connection, so steps 3 to 7 answer `notConfigured: true` with a `reason` rather than erroring:
 - `no_scope`: Merchant Center is not connected in the GSC Wizard app yet.
-- `credentials_revoked`: the consent exists but Google rejects the stored credentials; reconnect the Google account on the Account page.
+- `credentials_revoked`: the consent exists but Google rejects the saved connection; reconnect the Google account on the Account page.
 - `no_account`: no Merchant Center account is linked to this site; link one in the app.
 
 A merchant that refuses every connected Google account fails with `forbidden` and fixed wording that says access to it was lost and how to restore it; relay it. In every one of these cases step 2 still works from Search Console, so deliver the listing totals and say the Merchant Center sections are unavailable.

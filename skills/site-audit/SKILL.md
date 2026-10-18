@@ -24,7 +24,7 @@ Call these tools for the resolved property. Keep going if one fails; note the ga
 8. `get_decay_overview`: the decay pressure picture (per-query or per-page metric matrix over recent complete months; this tool defaults to whole months rather than the 28-day window). Judge how much of the property's traffic sits in decaying rows versus stable or growing ones.
 9. `analyze_cannibalization`: queries where two or more pages compete, scored by impression-split entropy. Keep this high level: report how widespread it is and the 3 to 5 worst affected queries, not an exhaustive list.
 10. `score_opportunities`: impression-weighted opportunities favoring near-threshold positions with low current CTR (positions 3-30). These are the fastest wins.
-11. `get_core_web_vitals`: CrUX field data with ratings and week-over-week regressions. If it returns `notConfigured`, say a CrUX API key is not set up in the app and skip page experience rather than guessing.
+11. `get_core_web_vitals`: CrUX field data with ratings and week-over-week regressions. If it returns `notConfigured`, say the Chrome UX Report connection is not set up in the app and skip page experience rather than guessing.
 
 ## Step 3: Interpretation rules
 

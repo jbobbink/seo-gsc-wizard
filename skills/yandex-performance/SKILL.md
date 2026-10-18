@@ -15,7 +15,7 @@ Report how a property stands in Yandex search (which matters mainly for Russian,
 
 3. **Read every `notConfigured` answer.** Each Yandex tool answers `notConfigured: true` with a `reason` and a `hint` instead of an error. Tell the user what each reason means and what to do:
    - `not_connected`: no Yandex account is connected to the property owner's GSC Wizard account; connect Yandex in the app.
-   - `reauth`: the owner must reconnect Yandex in the app, because the token was rejected or the grant predates the `webmaster:verify` scope.
+   - `reauth`: the owner must reconnect Yandex in the app, because Yandex rejected the connection or the grant predates the `webmaster:verify` scope.
    - `host_not_found`: the host is not in the connected Yandex Webmaster account; add and verify it there.
    - `host_not_verified`: the site is in the account but Yandex has not verified it; verify it in Yandex Webmaster and expect no data until then.
    - `owner_only`: the property is shared, and Yandex reads use the owner's connection, which is not shared; only the owner can run this report.

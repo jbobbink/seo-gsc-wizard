@@ -1,11 +1,11 @@
 ---
 name: anomaly-check
-description: Quiet daily or weekly health check for one Search Console property, built to run unattended from a scheduler with the GSC Wizard MCP tools and a read-only key. Scans clicks and impressions for severe anomalies and downward level shifts, compares the last settled week with the one before, checks the indexing tracker for lost pages, and overlaps findings with Google updates. Stays silent with one fixed line unless a threshold is crossed, then reports the dated finding, cause class and next skill to run. Use when the user asks "check my site for anomalies", "anything wrong today", "daily SEO check", "monitor my property", or sets up a scheduled check.
+description: Quiet daily or weekly health check for one Search Console property, built to run unattended from a scheduler with the GSC Wizard MCP tools and a read-only connection. Scans clicks and impressions for severe anomalies and downward level shifts, compares the last settled week with the one before, checks the indexing tracker for lost pages, and overlaps findings with Google updates. Stays silent with one fixed line unless a threshold is crossed, then reports the dated finding, cause class and next skill to run. Use when the user asks "check my site for anomalies", "anything wrong today", "daily SEO check", "monitor my property", or sets up a scheduled check.
 ---
 
 # Anomaly Check
 
-Run a quiet health check on one property and speak only when something needs a human. It is meant for a scheduler: it calls no write tool, works with a read-only API key, and its quiet-case reply is one fixed line so a log stays readable. `$ARGUMENTS` may contain a property (or several, checked one after another with the same rules), a cadence (daily or weekly; daily is the default) and a metric to focus on; nothing else is needed.
+Run a quiet health check on one property and speak only when something needs a human. It is meant for a scheduler: it calls no write tool, works with a read-only connection, and its quiet-case reply is one fixed line so a log stays readable. `$ARGUMENTS` may contain a property (or several, checked one after another with the same rules), a cadence (daily or weekly; daily is the default) and a metric to focus on; nothing else is needed.
 
 ## Workflow
 

@@ -12,7 +12,7 @@ Take a property from "not in GSC Wizard" (or half configured) to ready for the a
 1. **Check the account first.** Call `get_account_info` (no arguments) and read:
    - `googleAccounts` (`email`, `scopes`, `isPrimary`): an empty list with `emptyBecause` means no Google account is connected, so send the user to tool.gscwizard.com/account unless they only use properties shared with them.
    - `subscription` (`plan`, `status`, `currentPeriodEnd`, `cancelAtPeriodEnd`) and `access.level`: `paid` means the property tools will run. A `payment_required` refusal on this first call means there is no running trial or active paid plan (the free tier serves only the GSC Wizard mobile app, so from an MCP client every tool refuses): tell the user to start or renew a plan at tool.gscwizard.com/settings/subscription, mark every step as blocked, and stop. `unknown`, or a `warning` saying a read failed, means retry before acting on those fields.
-   - `apiKey.scope`: `read` means every write below needs a read & write key, so report those steps as "needs a read & write key" instead of attempting them.
+   - `apiKey.scope`: `read` means every write below needs write access, so report those steps as "needs write access" instead of attempting them.
 
 2. **Inventory what is registered.** Call `list_sites` (no arguments) and show a compact table of `siteUrl`, `tags`, `permissionLevel`, `readable`, `activated`, `gscScope` and, on shared rows, `sharedBy` and `accessLevel`. Read the flags like this:
 
@@ -72,13 +72,13 @@ Present a setup checklist as a compact markdown table:
 | Item | Status | Detail |
 |---|---|---|
 
-Status is one of done, already set, blocked or skipped, with one row each for: account and plan, Google connection and `gscScope`, property registered, verified in Search Console, shown on the dashboard (slots used of limit, from `set_dashboard_visibility`), tags, branded keywords (how many), sitemap URLs, crawl rate, filter presets (names), indexing tracker, IndexNow, and first data read (clicks and impressions from `get_site_summary` with its dates). Below it, list what remains for the user to do outside the tools (verify the property, reconnect Google with full access, upgrade the plan, publish the IndexNow key file, create a read & write key).
+Status is one of done, already set, blocked or skipped, with one row each for: account and plan, Google connection and `gscScope`, property registered, verified in Search Console, shown on the dashboard (slots used of limit, from `set_dashboard_visibility`), tags, branded keywords (how many), sitemap URLs, crawl rate, filter presets (names), indexing tracker, IndexNow, and first data read (clicks and impressions from `get_site_summary` with its dates). Below it, list what remains for the user to do outside the tools (verify the property, reconnect Google with full access, upgrade the plan, publish the IndexNow key file, give the connection write access).
 
 Then name the first skills to run on the new property, in order: site-audit for the baseline, then quick-wins, content-decay and cannibalization as the audit points to them, with indexing-health if the data read or the sitemap list looked thin. End with a short list of next steps, each naming the tool or skill that performs it. Do not fabricate rows the tools did not return; if a read came back empty, say so.
 
 ## Error handling
 
-If any tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required. If the property is not found, re-run `list_sites` and offer the closest matches instead of guessing a URL format. If a single tool fails for another reason, report the gap in the relevant section and complete the rest of the workflow with the remaining data. If a write is refused because the connection uses a read-only API key, say that this step needs a read & write key and continue with the read-only parts.
+If any tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required. If the property is not found, re-run `list_sites` and offer the closest matches instead of guessing a URL format. If a single tool fails for another reason, report the gap in the relevant section and complete the rest of the workflow with the remaining data. If a write is refused because the connection is read-only, say that this step needs write access and continue with the read-only parts.
 
 ## Grounding
 

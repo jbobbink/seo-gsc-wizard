@@ -32,11 +32,11 @@ Define keyword-based topic clusters on one property and measure how each topic p
    - The unclustered drill-down is the pool for new clusters.
    - An empty drill-down explains itself in `emptyBecause` and `nextStep` (raise `scanLimit`, or compare the keywords with the `query_top_queries` rows).
 
-6. **Create, extend, trim or delete clusters (read & write key).** These are writes: ALWAYS list the exact cluster name and keyword list, say what will change, and ask the user to confirm before calling.
+6. **Create, extend, trim or delete clusters (write access).** These are writes: ALWAYS list the exact cluster name and keyword list, say what will change, and ask the user to confirm before calling.
    - `create_topic_cluster` takes `siteUrl`, `name` (unique per property, up to 200 characters) and `keywords` (1 to 1000). It returns the saved `cluster` and `alreadyExisted`; the call is idempotent, so an existing name returns that cluster unchanged (its keywords are not merged), and changing it is an update.
    - `update_topic_cluster` takes `clusterId` plus `name` and/or `keywords`, with `mode` deciding how `keywords` applies: `replace` (the default) swaps the whole list, `add` merges the new keywords in (deduplicated case-insensitively), `remove` drops the listed ones. `mode` only applies together with `keywords`. Read the current list with `list_topic_clusters` before a replace. The response carries the saved `cluster`, `keywordsBefore` and `keywordsAfter`; quote both counts.
    - `delete_topic_cluster` takes `clusterId` and returns `deleted: true` with the cluster's `name`. Deleting a cluster removes no query data.
-   - If a write is refused because the connection uses a read-only API key, say that this step needs a read & write key and continue with the read-only parts.
+   - If a write is refused because the connection is read-only, say that this step needs write access and continue with the read-only parts.
 
 7. **Scope other reports to a cluster.** Call `get_filter_options` with `siteUrl`. Its `topicClusters` list says per cluster whether it is `filterable`, with a `reason` and `message` when it is not. Scoped reads need an active plan or trial: on a free account the five tools below refuse the scope with `payment_required`, while their unscoped calls still work. Pass a filterable id as `topicClusterId` to:
    - `query_top_pages`, for the pages that win the topic's clicks;

@@ -35,7 +35,7 @@ Build a markets table and a device table for one property, find the gaps (market
 
 7. **Core Web Vitals per form factor.** `get_core_web_vitals` measures one device class per call (`formFactor`: `ALL` by default, or `PHONE`, `DESKTOP`, `TABLET`), so call it with `formFactor: "PHONE"` and again with `formFactor: "DESKTOP"`, and optionally with `url` set to the biggest mobile losing page from step 6.
    - Read `metrics[]` (`label`, `coreWebVital`, `latestP75Formatted`, `latestRating`, `p75Series`, `goodDensitySeries`), `periods` (oldest first, so the last entry is the latest week) and `regressions`. When `regressions` is empty, `methodLimits` explains that only a rating-band change between the two latest weeks is listed, so read `p75Series` for a slower drift.
-   - A `notConfigured: true` response means no Chrome UX Report API key is configured in the app; say so and skip page experience rather than guessing. A `noData: true` response means CrUX holds too little real-world Chrome traffic for that target and form factor; quote its `message` and run the wider call its `nextStep` names if present.
+   - A `notConfigured: true` response means the Chrome UX Report connection is not set up in the app; say so and skip page experience rather than guessing. A `noData: true` response means CrUX holds too little real-world Chrome traffic for that target and form factor; quote its `message` and run the wider call its `nextStep` names if present.
    - A poor or regressing mobile vital next to a mobile-only decline from step 4 is a probable cause; without the decline it is a watch item.
 
 ## Interpretation rules

@@ -64,7 +64,7 @@ A GA4 tool that answers `notConfigured: true` is not an error: read `reason`, re
 | `reason` | Meaning | What to tell the user |
 |---|---|---|
 | `no_scope` | Google Analytics is not connected in the GSC Wizard app for the account in `account` | connect Google Analytics in the app, then retry |
-| `no_scope` with `reauthRequired: true` | it is connected but Google rejects the stored credentials | reconnect Google Analytics on the Account page of the app |
+| `no_scope` with `reauthRequired: true` | it is connected but Google rejects the saved connection | reconnect Google Analytics on the Account page of the app |
 | `no_property` | no GA4 property is linked to this site in the app under that account | link one on the site's Analytics page in the app |
 
 A refusal carrying `reason: "google_token_unavailable"` is temporary: retry the call once. `ga4_not_shared` means the property was shared with this account without GA4 access and only the owner can enable it on the invite; `google_reconnect_required` and `ga4_permission_denied` need the user to reconnect Google Analytics with an account that can read the GA4 property, and `owner_google_connection_unavailable` needs the owner who shared the property to do the same.

@@ -43,7 +43,7 @@ Explain everything the connected tools know about one URL and condense it into a
 
 8. **Core Web Vitals.** Call `get_core_web_vitals` with `siteUrl` and `url` set to the page. The schema takes an optional `url`; without it the tool measures the whole origin, so always say which level the numbers describe. Start with `formFactor: "ALL"` and add a `PHONE` call when step 4 showed the page is mobile-heavy.
    - Read `metrics` (LCP, INP and CLS with FCP and TTFB, each rated), `regressions` (a Core Web Vital whose rating band worsened between its two latest weeks) and `latestPeriod`.
-   - A `notConfigured` response with a `hint` means no CrUX API key is set up in the app: say so and skip speed.
+   - A `notConfigured` response with a `hint` means the Chrome UX Report connection is not set up in the app: say so and skip speed.
    - A `noData` response means the Chrome UX Report holds no record for this page: follow its `nextStep` (the origin without `url`) and label that result as origin-level.
 
 9. **GA4 engagement, when linked.** Call `get_blended_landing_pages` with `siteUrl`, the same dates, `comparisonStartDate`/`comparisonEndDate` for the previous period, `organicOnly: true` and `limit: 500`, then find the row whose `key` equals the page's path (rows are keyed by normalized path, not full URL).

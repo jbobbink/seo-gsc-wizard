@@ -29,7 +29,7 @@ Keep the property's change log complete (every deploy, content launch, redirect,
    - `category` (up to 50 characters), optional; the app's own values are `core-update`, `spam-update`, `content`, `technical`, `agency` and `other`, each with a default colour on the chart, so prefer them.
    - `color`, optional, a 6-digit hex such as `#2563eb`.
    - `siteUrl` to put the note on that property; omit it for an account-wide note. The scope is fixed at creation. Platform annotations cannot be created here.
-   - `clientRequestId` (a UUID), optional; a resend with the same key returns the first row instead of a duplicate.
+   - `clientRequestId` (a UUID), optional; a retry with the same id returns the first row instead of a duplicate.
 
    The response `annotation` carries the `id`; quote it so the user can edit the note later.
 
@@ -78,7 +78,7 @@ Do not fabricate rows the tools did not return; if a bucket or a window is empty
 
 ## Error handling
 
-If any tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required. If the property is not found, re-run `list_sites` and offer the closest matches instead of guessing a URL format. If a single tool fails for another reason, report the gap in the relevant section and complete the rest of the workflow with the remaining data. If a write is refused because the connection uses a read-only API key, say that this step needs a read & write key and continue with the read-only parts.
+If any tool call fails with an authentication or subscription error, tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required. If the property is not found, re-run `list_sites` and offer the closest matches instead of guessing a URL format. If a single tool fails for another reason, report the gap in the relevant section and complete the rest of the workflow with the remaining data. If a write is refused because the connection is read-only, say that this step needs write access and continue with the read-only parts.
 
 ## Grounding
 

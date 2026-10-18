@@ -40,7 +40,7 @@ Read out one SEO split test: which group won, by how much, whether the differenc
 
 6. **Offer to log the conclusion.** Offer `create_annotation` with the `siteUrl`, `eventDate` (the decision date or the test's end), a `label` such as "Experiment <name>: variant rolled out", an optional `description` holding the numbers and an optional `category` (free text, up to 50 characters).
    - Show the exact values and run the call only after the user confirms. The annotation marks the chart; it does not change the experiment's status in the app.
-   - If the write is refused because the connection uses a read-only API key, say that this step needs a read & write key and finish with the read-only parts.
+   - If the write is refused because the connection is read-only, say that this step needs write access and finish with the read-only parts.
 
 ## Output
 

@@ -12,7 +12,7 @@ Check the health of the Merchant Center account linked to one Search Console pro
 1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Find the linked account.** Call `list_gmc_accounts` with the property's `siteUrl` (the argument is optional, but passing it adds `linkedAccountId`, the account this property is linked to). The `accounts[]` rows carry `accountId`, `accountName`, `accountEmail`, `isAdvanced` and `linkedSiteUrls`. Interpret the response before anything else:
-   - `connected: false` with `reason: "no_scope"` means the Merchant Center consent has not been granted in the GSC Wizard app; `reason: "credentials_revoked"` means it was granted but Google now rejects the stored credentials, so the Google account has to be reconnected on the Account page. Relay the `hint` and stop the Merchant Center steps, since nothing below can answer.
+   - `connected: false` with `reason: "no_scope"` means the Merchant Center consent has not been granted in the GSC Wizard app; `reason: "credentials_revoked"` means it was granted but Google now rejects the saved connection, so the Google account has to be reconnected on the Account page. Relay the `hint` and stop the Merchant Center steps, since nothing below can answer.
    - Accounts listed but no `linkedAccountId` means the property is not linked yet. Linking happens in the GSC Wizard app, not through a tool: show the account table and tell the user which account to link. For a grantee without the Merchant Center opt-in the id is withheld with a note; say so.
    - `isAdvanced: true` marks a multi-client parent that cannot be reported on; one of its sub-accounts has to be linked instead.
    - `incomplete: true` means the list is a floor: read `gaps`, `unprobedAccountIds` and `errors`, say what could not be read, and suggest a retry.
@@ -62,7 +62,7 @@ If any tool call fails with an authentication or subscription error, tell the us
 
 Merchant Center is an optional connection, so every tool in this workflow answers `notConfigured: true` with a `reason` rather than erroring, and the reason decides what to tell the user:
 - `no_scope`: Merchant Center is not connected in the GSC Wizard app yet.
-- `credentials_revoked`: the consent exists but Google rejects the stored credentials; reconnect the Google account on the Account page.
+- `credentials_revoked`: the consent exists but Google rejects the saved connection; reconnect the Google account on the Account page.
 - `no_account`: no Merchant Center account is linked to this site; show the `list_gmc_accounts` table and say which one to link in the app.
 - `gmc_on_other_account`: the scope sits on another Google login than the property's Search Console one, so the warehouse cannot fill and nothing is stored yet.
 

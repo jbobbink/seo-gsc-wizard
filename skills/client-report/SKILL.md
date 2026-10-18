@@ -15,7 +15,7 @@ Turn one property's performance into a deliverable a client can open: a self-con
    - the HTML report: one self-contained file the user forwards or uploads;
    - a portal table: one URL behind a client login, which the user sends once access is granted;
    - both, with the portal table carrying the one table the client will look at most.
-   Every write step below lists what it will create and waits for the user's yes, and all of them need a read & write API key. If a write is refused because the connection uses a read-only key, say so and complete the read-only parts.
+   Every write step below lists what it will create and waits for the user's yes, and all of them need write access. If a write is refused because the connection is read-only, say so and complete the read-only parts.
 
 3. **Generate the report.** Call `generate_seo_report` with `siteUrl`, `days` (7 to 180, default 28), `format` and `includeSitemap` (default `true`; `false` skips the sitemap fetch). Choose `format` by use:
    - `html` (the default): a finished, self-contained report in `html`, with `bytes` as its size. Save that string as a `.html` file and hand the file to the user; do not paste it into the conversation.

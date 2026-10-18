@@ -40,7 +40,7 @@ Explain everything the connected tools know about one keyword and condense it in
 7. **Bing demand.** Call `get_bing_keyword_stats` with `keyword` set to the query; it takes no `siteUrl` because this is marketplace demand, not property data.
    - `country` defaults to "us" and `language` to "en-US": set them to the user's main market, converting the alpha-3 code from step 4 to the two-letter code Bing expects (usa to us, gbr to gb, deu to de) with a matching BCP-47 tag.
    - `stats` holds weekly rows, oldest first, with `date`, `impressions` and `broadImpressions`; `count` is the number of weeks. Read the seasonality and the broad-match headroom, and compare the demand curve with the GSC impression series from step 2.
-   - `emptyBecause` means Bing has no history for that keyword in that market. A `notConfigured` answer with a `hint` means no Bing Webmaster API key is set up in the app: say so and skip both Bing steps.
+   - `emptyBecause` means Bing has no history for that keyword in that market. A `notConfigured` answer with a `hint` means Bing Webmaster Tools is not connected in the app: say so and skip both Bing steps.
 
 8. **Bing pages.** Call `list_bing_sites` (no arguments) and check in `siteDetails` that the site is `isVerified`, since Bing serves data only for a verified site. Then call `get_bing_query_page_stats` with `siteUrl` (the GSC property URL), `query` set to the query text, and no dates for everything Bing has (about 16 months; Bing dates rows by week, so any window selects whole weeks).
    - `pairs` run by clicks then impressions, each with `query`, `url`, `clicks`, `impressions`, `ctr` (0-100, and above 100 when Bing logs more clicks than impressions) and `position`.

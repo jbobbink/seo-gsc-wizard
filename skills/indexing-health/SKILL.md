@@ -17,7 +17,7 @@ Diagnose why pages are missing from Google's (and optionally Bing's) index and p
 
 4. **Check inspection quota BEFORE inspecting anything.** Call `get_inspection_quota` and report the remaining daily quota for this property. Plan the inspection batch so it uses well under half of what remains; never spend the whole quota in this workflow. If the quota is exhausted or nearly so, skip step 5, rely on step 6 instead, and tell the user the quota is a daily per-property limit (2,000 inspections per day) that resets each day, so they can rerun this check tomorrow.
 
-5. **Targeted bulk inspection.** Build a small suspect set, typically 5 to 15 URLs and never more than 25: lost or never-indexed URLs from the tracker, sitemap URLs with zero impressions, and any URLs the user named. Call `bulk_inspect_urls` on that set. If it is refused because the connection uses a read-only API key, call `inspect_url` for each URL instead, for at most 10 URLs, and mention that batch inspection needs a read & write key. Group the results by root cause from the verdict and coverage state, for example:
+5. **Targeted bulk inspection.** Build a small suspect set, typically 5 to 15 URLs and never more than 25: lost or never-indexed URLs from the tracker, sitemap URLs with zero impressions, and any URLs the user named. Call `bulk_inspect_urls` on that set. If it is refused because the connection is read-only, call `inspect_url` for each URL instead, for at most 10 URLs, and mention that batch inspection needs write access. Group the results by root cause from the verdict and coverage state, for example:
    - Crawled - currently not indexed
    - Discovered - currently not indexed (not yet crawled)
    - Excluded by noindex
@@ -27,7 +27,7 @@ Diagnose why pages are missing from Google's (and optionally Bing's) index and p
 
 6. **Recent inspection history.** Call `list_url_inspections` to pull recent persisted results without spending quota. Use it to widen the evidence base and to spot status changes (previously indexed URLs that flipped to not indexed).
 
-7. **Bing (optional).** If the user cares about Bing or asked to (re)submit pages, call `get_bing_crawl_issues` for URLs with 4xx/5xx errors, robots blocks, redirect problems, or malware flags; a `notConfigured` response means no Bing API key is linked, so mention that and move on. When the user wants pages (re)submitted, ALWAYS list the exact URLs and ask for confirmation first, then call `submit_indexnow_urls` (up to 100 URLs). Explain that a 202 response means accepted with key validation pending, not confirmation of delivery or indexing; `list_indexnow_submissions` shows the submission history.
+7. **Bing (optional).** If the user cares about Bing or asked to (re)submit pages, call `get_bing_crawl_issues` for URLs with 4xx/5xx errors, robots blocks, redirect problems, or malware flags; a `notConfigured` response means Bing Webmaster Tools is not connected in the app, so mention that and move on. When the user wants pages (re)submitted, ALWAYS list the exact URLs and ask for confirmation first, then call `submit_indexnow_urls` (up to 100 URLs). Explain that a 202 response means accepted with key validation pending, not confirmation of delivery or indexing; `list_indexnow_submissions` shows the submission history.
 
 ## Output
 
