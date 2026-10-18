@@ -5,11 +5,11 @@ description: Analyse a Search Console property's international and device perfor
 
 # Country and Device Performance
 
-Build a markets table and a device table for one property, find the gaps (markets where the position is fine but the CTR is low, declines that only mobile shows), and recommend fixes. `$ARGUMENTS` may contain a property (a GSC site URL or a recognizable name), a date range, a country (a name or an ISO 3166-1 alpha-3 code), a device, or a URL path to narrow the winners and losers step.
+Build a markets table and a device table for one property, find the gaps (markets where the position is fine but the CTR is low, declines that only mobile shows), and recommend fixes. The user's request may contain a property (a GSC site URL or a recognizable name), a date range, a country (a name or an ISO 3166-1 alpha-3 code), a device, or a URL path to narrow the winners and losers step.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Anchor and windows.** Call `get_site_summary` with `days: 28`, or with `startDate`/`endDate` when the user gave dates (a date you pass always wins and `days` only sizes an edge you leave out). Use the last 28 days compared with the previous period unless the user specifies dates.
    - Read `current` and `previous` (`clicks`, `impressions`, `ctr`, `avgPosition`) and `deltas` (`clicks`, `impressions`, `ctrPoints`, `positionDelta`).

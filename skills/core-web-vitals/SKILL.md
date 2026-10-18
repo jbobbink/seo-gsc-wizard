@@ -5,11 +5,11 @@ description: Review page experience for a Search Console property from Chrome UX
 
 # Core Web Vitals Review
 
-Report the real-user page experience of one property from Chrome UX Report (CrUX) field data, find the regressions, and rank the pages or templates to fix by the clicks at stake. `$ARGUMENTS` may contain a property, a single page URL, a device hint ("mobile", "desktop"), or a metric to focus on (LCP, INP, CLS); honor it by narrowing the calls, but still report all three Core Web Vitals.
+Report the real-user page experience of one property from Chrome UX Report (CrUX) field data, find the regressions, and rank the pages or templates to fix by the clicks at stake. The user's request may contain a property, a single page URL, a device hint ("mobile", "desktop"), or a metric to focus on (LCP, INP, CLS); honor it by narrowing the calls, but still report all three Core Web Vitals.
 
 ## Steps
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Origin-level vitals.** Call `get_core_web_vitals` with `siteUrl` and `formFactor: "ALL"` (the default; the other values are `PHONE`, `DESKTOP`, `TABLET`). Omit `url` so the whole origin is measured. Three answers are possible:
    - `notConfigured: true` with a `hint`: the Chrome UX Report connection is not set up in the GSC Wizard app. Tell the user so, relay the hint (the Core Web Vitals report in the app is where that connection is set up), and stop the vitals part of this workflow; still run steps 4 and 5 so the user gets the traffic picture.

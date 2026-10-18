@@ -5,7 +5,7 @@ description: Onboard a new client site into GSC Wizard and get it ready for the 
 
 # Property Setup
 
-Take a property from "not in GSC Wizard" (or half configured) to ready for the analysis skills, and hand back a checklist of what was done and what still needs the user. `$ARGUMENTS` may contain the property (a GSC site URL or a recognizable site name), a client name to use as a tag, brand terms, sitemap URLs, folder paths to create as separate properties, filter presets to save, or a request to remove a property; honor what is given and ask for the rest only when a step needs it.
+Take a property from "not in GSC Wizard" (or half configured) to ready for the analysis skills, and hand back a checklist of what was done and what still needs the user. The user's request may contain the property (a GSC site URL or a recognizable site name), a client name to use as a tag, brand terms, sitemap URLs, folder paths to create as separate properties, filter presets to save, or a request to remove a property; honor what is given and ask for the rest only when a step needs it.
 
 ## Workflow
 
@@ -25,7 +25,7 @@ Take a property from "not in GSC Wizard" (or half configured) to ready for the a
 
    If the user's property is already listed, skip to step 5 or 6. An empty list carries `emptyBecause` and `nextStep`; relay them.
 
-3. **Register a property that already exists in Search Console.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. If several plausible properties exist, ask the user which one before continuing. List the exact URL and tags, confirm, then call `add_site` with:
+3. **Register a property that already exists in Search Console.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. If several plausible properties exist, ask the user which one before continuing. List the exact URL and tags, confirm, then call `add_site` with:
    - `siteUrl`: must already be in Search Console and verified for a connected Google account; the scheme and host match case-insensitively and a missing trailing slash is added, but nothing is provisioned.
    - `tags` (optional, up to 20 strings), for example the client name.
 

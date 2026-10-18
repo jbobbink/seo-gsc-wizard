@@ -5,11 +5,11 @@ description: Report Bing search performance for a Search Console property with t
 
 # Bing Performance
 
-Report how a property performs on Bing (Bing, Yahoo and DuckDuckGo organic, as served by Bing Webmaster Tools) next to its Google numbers, and end with recommendations. `$ARGUMENTS` may contain a property name or URL, a date range, a focus hint (a page URL, a query, or "compare with Google"), or a keyword for the demand check; honor it by going deeper on that part while still producing the full report.
+Report how a property performs on Bing (Bing, Yahoo and DuckDuckGo organic, as served by Bing Webmaster Tools) next to its Google numbers, and end with recommendations. The user's request may contain a property name or URL, a date range, a focus hint (a page URL, a query, or "compare with Google"), or a keyword for the demand check; honor it by going deeper on that part while still producing the full report.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Every property-scoped Bing tool takes that same GSC `siteUrl` and maps it to Bing's form itself (`sc-domain:example.com` becomes `https://example.com/`), echoing the result as `bingSiteUrl`.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Every property-scoped Bing tool takes that same GSC `siteUrl` and maps it to Bing's form itself (`sc-domain:example.com` becomes `https://example.com/`), echoing the result as `bingSiteUrl`.
 
 2. **Confirm the Bing side.** Call `list_bing_sites` (no arguments). A `notConfigured: true` answer means Bing Webmaster Tools is not connected for the property's Google account in the GSC Wizard app; tell the user to add it there, report the Google side from step 4 only, and stop. Otherwise find the property in `siteDetails` and read `isVerified`: Bing serves data only for a verified site, an unverified one makes the property-scoped tools answer with a not-verified error that names the fix (a subfolder property has to be verified as its own site in Bing Webmaster Tools), and a property missing from `sites` has to be added there first.
 

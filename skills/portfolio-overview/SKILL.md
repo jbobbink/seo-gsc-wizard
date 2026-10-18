@@ -5,7 +5,7 @@ description: Build an agency or multi-site portfolio view across every Search Co
 
 # Portfolio Overview
 
-Produce a cross-property view of the account: which sites carry the traffic, which lost the most, how each client tag performs, and which property deserves the next deep dive. `$ARGUMENTS` may contain a tag name, a number of days, a search type, a focus hint ("only client X", "which sites dropped"), or a tag or visibility instruction; honor it when present.
+Produce a cross-property view of the account: which sites carry the traffic, which lost the most, how each client tag performs, and which property deserves the next deep dive. The user's request may contain a tag name, a number of days, a search type, a focus hint ("only client X", "which sites dropped"), or a tag or visibility instruction; honor it when present.
 
 ## Workflow
 

@@ -2,6 +2,12 @@
 
 Users of the Claude Code plugin, the Cursor plugin and the Gemini CLI extension only receive changes when the `version` in all three manifests is bumped, so every entry here corresponds to one bump.
 
+## 1.1.1 (2026-10-18)
+
+- Skills no longer use the `$ARGUMENTS` placeholder; they say "the user's request" instead. Claude Code appends the typed arguments to a skill without the placeholder, so nothing changes for users, and the directory scan no longer sees an environment-variable token in the skills.
+- Credential-sounding wording removed from every skill: the MCP connection scope is "read-only" or "write access", and app settings are described as connections rather than API keys. Response values such as `credentials_revoked` are unchanged.
+- `scripts/check-skills.mjs` fails on any `$NAME` token in a skill.
+
 ## 1.1.0 (2026-10-18)
 
 - 32 new skills, bringing the total to 38, so that every tool family on the MCP server has a guided workflow: traffic-drop, anomaly-check, ranking-changes, annotations, client-report, portfolio-overview, ctr-optimization, page-deep-dive, query-deep-dive, long-tail-analysis, branded-split, country-device, content-groups, topic-clusters, indexing-tracker, indexnow-submit, sitemap-audit, onpage-audit, core-web-vitals, site-migration, experiment-results, traffic-forecast, property-setup, ga4-overview, seo-revenue, ai-assistant-traffic, bing-performance, bing-crawl-health, yandex-performance, merchant-center-health, shopping-performance and feed-audit.

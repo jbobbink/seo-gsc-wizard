@@ -5,11 +5,11 @@ description: Build a picture of one URL in a Search Console property with the GS
 
 # Page Deep Dive
 
-Explain everything the connected tools know about one URL and condense it into a page scorecard (search, indexing, on-page, speed, engagement), the queries it wins and loses, and recommendations. `$ARGUMENTS` may contain a property, the page URL or path, a date range, and a focus hint such as a country or "mobile only"; honor all of them.
+Explain everything the connected tools know about one URL and condense it into a page scorecard (search, indexing, on-page, speed, engagement), the queries it wins and loses, and recommendations. The user's request may contain a property, the page URL or path, a date range, and a focus hint such as a country or "mobile only"; honor all of them.
 
 ## Workflow
 
-1. **Resolve the property, the URL and the window.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property, the URL and the window.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
    - The page must be a full URL. When the user gives only a path, build the URL from the property's host, and for a `sc-domain:` property confirm host and protocol against the rows of `query_top_pages` rather than guessing between www and the bare host.
    - Use the last 28 days compared with the previous period unless the user specifies dates. The daily tools take no comparison parameter, so compare the first and second half of the window yourself and say the delta is derived.
    - GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.

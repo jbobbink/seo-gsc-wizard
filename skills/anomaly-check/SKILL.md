@@ -5,11 +5,11 @@ description: Quiet daily or weekly health check for one Search Console property,
 
 # Anomaly Check
 
-Run a quiet health check on one property and speak only when something needs a human. It is meant for a scheduler: it calls no write tool, works with a read-only connection, and its quiet-case reply is one fixed line so a log stays readable. `$ARGUMENTS` may contain a property (or several, checked one after another with the same rules), a cadence (daily or weekly; daily is the default) and a metric to focus on; nothing else is needed.
+Run a quiet health check on one property and speak only when something needs a human. It is meant for a scheduler: it calls no write tool, works with a read-only connection, and its quiet-case reply is one fixed line so a log stays readable. The user's request may contain a property (or several, checked one after another with the same rules), a cadence (daily or weekly; daily is the default) and a metric to focus on; nothing else is needed.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing; a scheduled run with no clear match reports that as its finding. GSC data lags about 2 to 3 days: the tools end at the latest settled date, so the check window is the last 7 settled days for a daily run and the last 14 for a weekly one; never treat the most recent 2 days as complete.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing; a scheduled run with no clear match reports that as its finding. GSC data lags about 2 to 3 days: the tools end at the latest settled date, so the check window is the last 7 settled days for a daily run and the last 14 for a weekly one; never treat the most recent 2 days as complete.
 
 2. **Single-day anomalies.** Call `detect_anomalies` with `metric: "clicks"`, `days: 28` (minimum 21) and the default `sensitivity` (3.5; the range is 2 to 6 and lower finds more). Repeat with `metric: "impressions"`.
    - Keep only `anomalies` whose `date` falls inside the check window; read `severity` (`critical`, `high`, `medium`, `low`, `info`), `direction` (`up` or `down`), `actual`, `expected` and `deviationPercent`.

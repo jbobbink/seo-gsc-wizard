@@ -5,11 +5,11 @@ description: Analyze how a store's products perform in Google's free listings an
 
 # Shopping Performance
 
-Report how one store's products perform in Google's free listings and how they stand against the market, ending with the offers and prices to act on. `$ARGUMENTS` may contain a property, a date range, a country (ISO 3166-1 alpha-2), a Google product taxonomy category id, a brand or offer id, or a focus hint such as "pricing" or "competitors"; honor it by going deeper there, but still run the core steps.
+Report how one store's products perform in Google's free listings and how they stand against the market, ending with the offers and prices to act on. The user's request may contain a property, a date range, a country (ISO 3166-1 alpha-2), a Google product taxonomy category id, a brand or offer id, or a focus hint such as "pricing" or "competitors"; honor it by going deeper there, but still run the core steps.
 
 ## Workflow
 
-1. **Resolve the property and the window.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Then fix the window:
+1. **Resolve the property and the window.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Then fix the window:
    - Use the last 28 days compared with the previous period unless the user specifies dates; omitting both `startDate` and `endDate` gives the default window.
    - For the Search Console data in step 2, GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
    - Merchant Center (steps 3 to 7) reports on its own calendar and carries no `partialDays` flag, so say that the newest day may still fill in rather than reading it as a drop, and the best-seller reports lag up to two weeks.

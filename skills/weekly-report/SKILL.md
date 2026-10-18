@@ -5,11 +5,11 @@ description: Produce a weekly SEO performance digest for a Search Console proper
 
 # Weekly SEO Report
 
-Produce a concise weekly SEO performance digest for one Search Console property, using the GSC Wizard MCP tools. `$ARGUMENTS` may contain a property (a GSC site URL or a recognizable site name) and/or a focus hint (a market, a site section, a topic); use it to resolve the property and to slant the analysis.
+Produce a concise weekly SEO performance digest for one Search Console property, using the GSC Wizard MCP tools. The user's request may contain a property (a GSC site URL or a recognizable site name) and/or a focus hint (a market, a site section, a topic); use it to resolve the property and to slant the analysis.
 
 ## Steps
 
-1. **Resolve the property.** If the user (or `$ARGUMENTS`) named a property, use it. Otherwise call `list_sites` first. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. If several plausible matches exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user (or the request) named a property, use it. Otherwise call `list_sites` first. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. If several plausible matches exist, ask the user which one before continuing.
 
 2. **Compute the date windows.** GSC data lags about 2 to 3 days, so offset the report week back by 3 days:
    - Current week: `today - 9` through `today - 3` (7 days inclusive).

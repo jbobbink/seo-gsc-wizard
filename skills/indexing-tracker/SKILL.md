@@ -5,11 +5,11 @@ description: Set up and run the GSC Wizard Indexing Tracker for a defined set of
 
 # Indexing Tracker
 
-Put a chosen set of URLs under continuous indexing monitoring and report where they stand. The output is the tracker status, the URLs still not indexed with their verdicts, and recommendations with a re-check plan. `$ARGUMENTS` may contain a property, a list of URLs or a path prefix (for example `/blog/`), a sitemap URL, and an action hint ("add", "check", "status", "remove"). This skill sets up and monitors; when the user wants to know why pages are not indexed, run the indexing-health skill, which diagnoses by cause.
+Put a chosen set of URLs under continuous indexing monitoring and report where they stand. The output is the tracker status, the URLs still not indexed with their verdicts, and recommendations with a re-check plan. The user's request may contain a property, a list of URLs or a path prefix (for example `/blog/`), a sitemap URL, and an action hint ("add", "check", "status", "remove"). This skill sets up and monitors; when the user wants to know why pages are not indexed, run the indexing-health skill, which diagnoses by cause.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Read the current tracker.** Call `get_indexing_tracker` with `siteUrl`. `tracker: null` means no tracker exists yet; `add_tracked_urls` creates one, so carry on. Otherwise read `tracker.isActive` and `stats` (`total`, `indexed`, `notIndexed`, `pending`, `errors`, `warnings`, `lastCheckAt`), and compute the free capacity yourself as 1,800 minus `stats.total`, since a tracker holds at most 1,800 URLs per property. `emptyBecause` on an existing tracker means it holds no URLs.
 

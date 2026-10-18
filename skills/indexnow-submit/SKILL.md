@@ -5,11 +5,11 @@ description: Set up IndexNow for a Search Console property and submit changed UR
 
 # IndexNow Submit
 
-Get IndexNow working for one property and submit a set of changed URLs to it. The output is the setup status, what was submitted with each URL's response, and what to check later. `$ARGUMENTS` may contain a property, a list of URLs, a path prefix or sitemap URL to draw URLs from, and an action hint ("set up", "rotate", "submit", "history"). IndexNow reaches the engines that take part in it (Bing, Yandex, Seznam); it tells Google nothing, so say so when the user's goal is Google indexing and point them to the indexing-tracker skill for that.
+Get IndexNow working for one property and submit a set of changed URLs to it. The output is the setup status, what was submitted with each URL's response, and what to check later. The user's request may contain a property, a list of URLs, a path prefix or sitemap URL to draw URLs from, and an action hint ("set up", "rotate", "submit", "history"). IndexNow reaches the engines that take part in it (Bing, Yandex, Seznam); it tells Google nothing, so say so when the user's goal is Google indexing and point them to the indexing-tracker skill for that.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. The IndexNow tools take the GSC `siteUrl`; when the user also cares about the Bing side, `list_bing_sites` shows which sites Bing has verified (`siteDetails[].isVerified`), and `notConfigured: true` there means Bing Webmaster Tools is not connected in the GSC Wizard app.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. The IndexNow tools take the GSC `siteUrl`; when the user also cares about the Bing side, `list_bing_sites` shows which sites Bing has verified (`siteDetails[].isVerified`), and `notConfigured: true` there means Bing Webmaster Tools is not connected in the GSC Wizard app.
 
 2. **Check the setup.** Call `get_indexnow_settings` with `siteUrl` and read `indexnowApiKeySet`, `indexnowApiKeyMasked` (the last four characters only), `keyFileVerified` and `keyFileUrl`. Both halves must hold before engines accept anything: a key stored, and the key file reachable on the site. Read `keyFileVerified` as follows:
    - `true`: ready, go to step 4.

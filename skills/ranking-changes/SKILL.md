@@ -5,11 +5,11 @@ description: Compare search rankings between any two periods for one Search Cons
 
 # Ranking Changes
 
-Report the winners and losers between two periods on one property and explain the biggest moves. Unlike the weekly-report skill, which is a fixed digest over the last settled week, this skill lets the user choose both windows, including year over year. `$ARGUMENTS` may contain a property, the two periods in any phrasing ("September vs August", "last 14 days vs the 14 before", "Q3 2026 vs Q3 2025"), a dimension to lead with (queries or pages), a search type, and a focus hint such as a country or a section; honor each.
+Report the winners and losers between two periods on one property and explain the biggest moves. Unlike the weekly-report skill, which is a fixed digest over the last settled week, this skill lets the user choose both windows, including year over year. The user's request may contain a property, the two periods in any phrasing ("September vs August", "last 14 days vs the 14 before", "Q3 2026 vs Q3 2025"), a dimension to lead with (queries or pages), a search type, and a focus hint such as a country or a section; honor each.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Fix the two windows.** The default is the last 28 settled days compared with the previous 28, which is what the tools use when all four date fields are omitted. Otherwise:
    - Translate the user's phrasing into `startDate`/`endDate` (the current window) and `comparisonStartDate`/`comparisonEndDate` (the baseline) as YYYY-MM-DD, and keep both windows the same length.

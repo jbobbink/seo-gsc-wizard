@@ -5,11 +5,11 @@ description: Run an indexing and crawl health check for a Search Console propert
 
 # Indexing Health Check
 
-Diagnose why pages are missing from Google's (and optionally Bing's) index and produce an issue summary grouped by cause, with affected URL counts and concrete fixes. `$ARGUMENTS` may contain a property name and/or a focus hint (for example a URL path or "check my blog section"); use it to skip resolution steps or narrow the suspect set.
+Diagnose why pages are missing from Google's (and optionally Bing's) index and produce an issue summary grouped by cause, with affected URL counts and concrete fixes. The user's request may contain a property name and/or a focus hint (for example a URL path or "check my blog section"); use it to skip resolution steps or narrow the suspect set.
 
 ## Workflow
 
-1. **Resolve the property.** If the user (or `$ARGUMENTS`) named a property, use it; site URLs use GSC formats like `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible matches exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user (or the request) named a property, use it; site URLs use GSC formats like `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible matches exist, ask the user which one before continuing.
 
 2. **Tracked-URL status.** Call `get_indexing_tracker` for the tracker config and status summary. If URLs are being tracked, also call `get_indexing_tracker_report` for the indexing health score, coverage, crawl freshness, and lost / newly-indexed URLs; the lost list is your primary suspect pool. Use `list_tracked_urls` with a status filter when you need the concrete non-indexed URLs. If the tracker is not set up, say so briefly and continue; the sitemap and inspection steps still work.
 

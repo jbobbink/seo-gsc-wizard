@@ -5,11 +5,11 @@ description: Report Yandex Webmaster performance for a Search Console property w
 
 # Yandex Performance
 
-Report how a property stands in Yandex search (which matters mainly for Russian, Turkish, Kazakh, Belarusian and Uzbek traffic) and end with recommendations. `$ARGUMENTS` may contain a property name or URL, a date range, a device (desktop, mobile or tablet) or a focus hint ("indexing", "queries", "problems"); honor it by going deeper on that part while still producing the full report.
+Report how a property stands in Yandex search (which matters mainly for Russian, Turkish, Kazakh, Belarusian and Uzbek traffic) and end with recommendations. The user's request may contain a property name or URL, a date range, a device (desktop, mobile or tablet) or a focus hint ("indexing", "queries", "problems"); honor it by going deeper on that part while still producing the full report.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. The Yandex tools take that same GSC `siteUrl`. Yandex Webmaster tracks whole hosts, so a URL-prefix property with a path (such as `https://example.com/blog/`) is matched to its host and every figure covers the whole host; the response then says so in `limitations`.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. The Yandex tools take that same GSC `siteUrl`. Yandex Webmaster tracks whole hosts, so a URL-prefix property with a path (such as `https://example.com/blog/`) is matched to its host and every figure covers the whole host; the response then says so in `limitations`.
 
 2. **Confirm the Yandex side.** Call `list_yandex_sites` (no arguments; the host list is cached for ten minutes, so a site verified a moment ago can take that long to show). `sites[]` rows carry `hostId`, `url`, `unicodeUrl`, `verified` and `mainMirrorUrl`, and an `emptyBecause` answer means the connected account holds no sites yet. Only a site added and verified in Yandex Webmaster itself reports data, so a host with `verified: false` needs the owner to verify it there, which can take a few days. When `mainMirrorUrl` differs from `url`, Yandex keeps the data on the main mirror; name it.
 

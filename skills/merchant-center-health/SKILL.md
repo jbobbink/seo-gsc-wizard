@@ -5,11 +5,11 @@ description: Check whether the Merchant Center account linked to a Search Consol
 
 # Merchant Center Health
 
-Check the health of the Merchant Center account linked to one Search Console property and find the products that are not serving in free listings, ending with a verdict and a fix list. `$ARGUMENTS` may contain a property, a Merchant Center account name or id, a language code for the issue text, or a focus hint (for example "only the feed" or "disapproved products"); honor the hint by going deeper there, but still run every step.
+Check the health of the Merchant Center account linked to one Search Console property and find the products that are not serving in free listings, ending with a verdict and a fix list. The user's request may contain a property, a Merchant Center account name or id, a language code for the issue text, or a focus hint (for example "only the feed" or "disapproved products"); honor the hint by going deeper there, but still run every step.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Find the linked account.** Call `list_gmc_accounts` with the property's `siteUrl` (the argument is optional, but passing it adds `linkedAccountId`, the account this property is linked to). The `accounts[]` rows carry `accountId`, `accountName`, `accountEmail`, `isAdvanced` and `linkedSiteUrls`. Interpret the response before anything else:
    - `connected: false` with `reason: "no_scope"` means the Merchant Center consent has not been granted in the GSC Wizard app; `reason: "credentials_revoked"` means it was granted but Google now rejects the saved connection, so the Google account has to be reconnected on the Account page. Relay the `hint` and stop the Merchant Center steps, since nothing below can answer.

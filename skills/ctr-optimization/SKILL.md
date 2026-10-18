@@ -5,13 +5,13 @@ description: Find the query and page pairs whose click-through rate underperform
 
 # CTR Optimization
 
-Find where the property's click-through rate falls short of what its positions should earn, and produce a candidates table plus a rewrite brief per page. `$ARGUMENTS` may contain a property, a date range, a site section or path, a country, and a focus hint such as "product pages only"; honor all of them. When the user wants one merged list of every kind of opportunity, run the quick-wins skill instead.
+Find where the property's click-through rate falls short of what its positions should earn, and produce a candidates table plus a rewrite brief per page. The user's request may contain a property, a date range, a site section or path, a country, and a focus hint such as "product pages only"; honor all of them. When the user wants one merged list of every kind of opportunity, run the quick-wins skill instead.
 
 ## Workflow
 
-1. **Resolve the property and the window.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property and the window.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
    - Use the last 28 days unless the user specifies dates; a shorter window makes the per-position CTR too noisy to judge.
-   - When `$ARGUMENTS` names a section, a path or a country, carry it into the step 4 filters rather than judging the whole property.
+   - When the user's request names a section, a path or a country, carry it into the step 4 filters rather than judging the whole property.
    - GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 
 2. **CTR curve against benchmarks.** Call `analyze_ctr_curve` with `siteUrl`, the dates, `minImpressions: 10` and `benchmarkSource: "all"` (or one of `awr`, `awr2026`, `awrAio`, `firstPageSage`, `sistrix`, `backlinko`, which adds the flat `expectedCtr` and `ctrDelta` fields). `buckets` always holds positions 1 to 20 in order, each with clicks, impressions, `queryCount`, `ctr`, `benchmarks` (expected CTR per source) and `deltas` (actual minus expected).
@@ -24,7 +24,7 @@ Find where the property's click-through rate falls short of what its positions s
    - Use them to see which pages and queries hold the impressions in the underperforming buckets, and to quote property totals from `coverage.siteTotals`.
    - Note `coverage.hiddenClicksShare` (0-1), the share of clicks with no query row that no pair below can explain.
 
-4. **Query and page pairs.** Call `query_search_analytics` with `dimensions: ["query", "page"]`, the dates and `rowLimit: 1000`; rows run by clicks, highest first, so page with `startRow` set to `pagination.nextOffset` when the first page has not yet reached the impression floor you chose. Add a page `contains` filter when `$ARGUMENTS` names a section and a country `equals` filter (lowercase ISO 3166-1 alpha-3, for example `usa`; the match is case-sensitive) when it names a market. Each row carries `keys` (query, then page), clicks, impressions, `ctr` and position.
+4. **Query and page pairs.** Call `query_search_analytics` with `dimensions: ["query", "page"]`, the dates and `rowLimit: 1000`; rows run by clicks, highest first, so page with `startRow` set to `pagination.nextOffset` when the first page has not yet reached the impression floor you chose. Add a page `contains` filter when the user's request names a section and a country `equals` filter (lowercase ISO 3166-1 alpha-3, for example `usa`; the match is case-sensitive) when it names a market. Each row carries `keys` (query, then page), clicks, impressions, `ctr` and position.
    - Keep rows whose rounded position falls in an underperforming bucket from step 2, whose impressions clear a floor that fits the property (100 over 28 days is a sensible start), and whose `ctr` sits below that bucket's benchmark or below the property's own bucket `ctr`.
    - For each kept pair compute the click gap as impressions times (benchmark CTR minus the pair's CTR) divided by 100, and label it as derived from `analyze_ctr_curve` and `query_search_analytics`. It is the ceiling of what a better snippet could recover, never a forecast.
    - Set aside brand and navigational queries, whose CTR follows the brand rather than the snippet, and say that you did.

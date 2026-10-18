@@ -5,11 +5,11 @@ description: Read out an SEO split test for a Search Console property with the e
 
 # Experiment Results
 
-Read out one SEO split test: which group won, by how much, whether the difference is significant, what else happened during the test, and what to do next. Experiments are created in the GSC Wizard app (its Experimentation page, where the control and variant URL groups are defined), not through the MCP; the tools here read and score them. `$ARGUMENTS` may contain a property, an experiment name or id, a test window, a confidence level, or a note on what was changed on the variant pages.
+Read out one SEO split test: which group won, by how much, whether the difference is significant, what else happened during the test, and what to do next. Experiments are created in the GSC Wizard app (its Experimentation page, where the control and variant URL groups are defined), not through the MCP; the tools here read and score them. The user's request may contain a property, an experiment name or id, a test window, a confidence level, or a note on what was changed on the variant pages.
 
 ## Steps
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Find the experiment.** Call `list_experiments` with the `siteUrl`; add `includeArchived: true` when the user asks about a finished or old test.
    - Each entry carries `id`, `name`, `description`, `status`, `startDate`, `groupCount` and `groups` (`group`, `urlCount`, `color`); the first group is the control.

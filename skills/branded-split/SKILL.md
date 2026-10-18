@@ -5,11 +5,11 @@ description: Split a Search Console property's performance into branded and non-
 
 # Branded versus Non-branded Split
 
-Measure how much of one property's search traffic is brand demand and how much is non-branded SEO, how each side is trending, and what share of the period's growth each side explains. `$ARGUMENTS` may contain a property (a GSC site URL or a recognizable name), a date range, the brand name or a list of brand terms to save, or a focus such as "non-branded only for the client report".
+Measure how much of one property's search traffic is brand demand and how much is non-branded SEO, how each side is trending, and what share of the period's growth each side explains. The user's request may contain a property (a GSC site URL or a recognizable name), a date range, the brand name or a list of brand terms to save, or a focus such as "non-branded only for the client report".
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Anchor and windows.** Call `get_site_summary` with `days: 28`, or with `startDate`/`endDate` when the user gave dates. Use the last 28 days compared with the previous period unless the user specifies dates.
    - Read `current`, `previous` and `deltas`, and keep `range.startDate`/`range.endDate` and `comparison.startDate`/`comparison.endDate`: the split tool only compares periods when both comparison dates are passed, so these four dates are what keep its comparison aligned with the anchor.

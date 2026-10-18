@@ -5,11 +5,11 @@ description: Find, triage, and build recovery plans for decaying content in Goog
 
 # Content Decay Triage
 
-Identify which content is losing search traffic, diagnose why per page, and produce a concrete recovery plan. `$ARGUMENTS` may contain a property (e.g. `sc-domain:example.com`) and/or a focus hint such as a URL path, a topic, or a custom date range; honor it if present.
+Identify which content is losing search traffic, diagnose why per page, and produce a concrete recovery plan. The user's request may contain a property (e.g. `sc-domain:example.com`) and/or a focus hint such as a URL path, a topic, or a custom date range; honor it if present.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it as `siteUrl` (GSC formats: `sc-domain:example.com` or `https://www.example.com/`). Otherwise call `list_sites` and pick the match; if several sites plausibly match, ask the user which one before proceeding.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it as `siteUrl` (GSC formats: `sc-domain:example.com` or `https://www.example.com/`). Otherwise call `list_sites` and pick the match; if several sites plausibly match, ask the user which one before proceeding.
 
 2. **Aggregate trend: `get_decay_overview`.** Call it with `dimension: "page"`, `metric: "clicks"`, and the default granularity (`month`) and window (last 16 complete months) unless the user specified a range.
    - Read the per-period TOTALS to describe the site-wide trajectory: steadily declining, seasonal dip, cliff after a specific month, or flat.

@@ -5,11 +5,11 @@ description: Define and measure topic clusters, the keyword-based segments over 
 
 # Topic Clusters
 
-Define keyword-based topic clusters on one property and measure how each topic performs across the property's queries, including how much of the demand no cluster covers yet. `$ARGUMENTS` may contain a property, a date range, a topic or keyword list, a cluster name, or an instruction to create, extend or delete a cluster; honor it when present.
+Define keyword-based topic clusters on one property and measure how each topic performs across the property's queries, including how much of the demand no cluster covers yet. The user's request may contain a property, a date range, a topic or keyword list, a cluster name, or an instruction to create, extend or delete a cluster; honor it when present.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 
 2. **Read the saved clusters.** Call `list_topic_clusters` with `siteUrl` and read:
    - `clusters`: each entry carries `id`, `name`, `keywords` and `created_at`, sorted by name;

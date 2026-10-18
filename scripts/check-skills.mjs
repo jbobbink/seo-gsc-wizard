@@ -23,13 +23,18 @@ const skillsDir = path.join(root, "skills");
 const REFERENCE_SKILL = "site-audit";
 const README_PREFIX = "/seo-gsc-wizard:";
 // The only form of each Claude Code idiom that build-openai-bundle.mjs rewrites.
-const ARGUMENTS_CODE = "`$ARGUMENTS`";
+// Anything that looks like an environment variable. The directory scan reads a
+// `$NAME` token in a skill as a credential taken from the user's machine
+// ("Uses a credential from the user's machine", a reviewer hold), and Claude
+// Code appends the typed arguments to a skill that has no `$ARGUMENTS` placeholder,
+// so skills carry none.
+const ENV_TOKEN = /\$[A-Za-z_{]/;
 const MCP_PHRASE = "run `/mcp` to (re)authenticate";
 const [MIN_WORDS, MAX_WORDS] = [40, 130];
 
 /**
  * Mirrors FORBIDDEN in build-openai-bundle.mjs minus its two Claude Code idioms
- * (`$ARGUMENTS` and `/mcp`), which that build rewrites and this script checks by
+ * (`/mcp`), which that build rewrites and this script checks by
  * placement instead. The two lists must stay in step.
  */
 const FORBIDDEN = [
@@ -115,9 +120,7 @@ function checkSkill(name, grounding) {
     for (const pattern of FORBIDDEN) {
       if (pattern.test(text)) fail(`matches forbidden ${pattern}`, line);
     }
-    if (text.split(ARGUMENTS_CODE).join("").includes("$ARGUMENTS")) {
-      fail(`$ARGUMENTS outside backticks (write ${ARGUMENTS_CODE})`, line);
-    }
+    if (ENV_TOKEN.test(text)) fail("contains a $NAME token (reads as a credential to the directory scan)", line);
     if (text.split(MCP_PHRASE).join("").includes("/mcp")) {
       fail(`/mcp outside the phrase "${MCP_PHRASE}"`, line);
     }

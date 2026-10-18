@@ -1,6 +1,6 @@
 {
   "name": "seo-gsc-wizard",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Analyze your Google Search Console, Bing, GA4, Merchant Center and Yandex data. 38 guided SEO skills: site audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports.",
   "mcpServers": {
     "gsc-wizard": {

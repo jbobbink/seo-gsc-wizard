@@ -5,13 +5,13 @@ description: Produce a client-facing SEO report for a Search Console property an
 
 # Client Report
 
-Turn one property's performance into a deliverable a client can open: a self-contained HTML report, a client-portal table, or both. The output is the report summary for the user, the exact share URL with who has access to it, and the next steps. `$ARGUMENTS` may contain a property, a date range or `days`, the client's email and name, a title, a focus (queries, pages, movers), and whether the user wants the HTML file, the portal link or both. For the content of a weekly digest, run the weekly-report skill and bring its mover tables here.
+Turn one property's performance into a deliverable a client can open: a self-contained HTML report, a client-portal table, or both. The output is the report summary for the user, the exact share URL with who has access to it, and the next steps. The user's request may contain a property, a date range or `days`, the client's email and name, a title, a focus (queries, pages, movers), and whether the user wants the HTML file, the portal link or both. For the content of a weekly digest, run the weekly-report skill and bring its mover tables here.
 
 ## Workflow
 
-1. **Resolve the property and the window.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates; `generate_seo_report` sizes both windows from `days`. GSC data lags about 2 to 3 days and the tools count back from the latest settled date, so state the dates the response reports (`range`, `comparison`) rather than implying the report runs through today, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
+1. **Resolve the property and the window.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates; `generate_seo_report` sizes both windows from `days`. GSC data lags about 2 to 3 days and the tools count back from the latest settled date, so state the dates the response reports (`range`, `comparison`) rather than implying the report runs through today, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 
-2. **Confirm the deliverable.** Ask, or infer from `$ARGUMENTS`, what the client gets and who receives it (email, optional name):
+2. **Confirm the deliverable.** Ask, or infer from the user's request, what the client gets and who receives it (email, optional name):
    - the HTML report: one self-contained file the user forwards or uploads;
    - a portal table: one URL behind a client login, which the user sends once access is granted;
    - both, with the portal table carrying the one table the client will look at most.

@@ -5,11 +5,11 @@ description: Find and rank quick-win SEO opportunities for a Search Console prop
 
 # Quick Wins
 
-Build a single prioritized list of quick-win SEO opportunities for one property. The user may pass a property or a focus hint in `$ARGUMENTS` (for example a site URL, a country, or "focus on product pages").
+Build a single prioritized list of quick-win SEO opportunities for one property. The user may pass a property or a focus hint in their request (for example a site URL, a country, or "focus on product pages").
 
 ## Step 1: Resolve the property
 
-1. If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
+1. If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
 2. Otherwise call `list_sites`. If exactly one plausible match exists, use it and say which one you picked. If several are plausible, ask the user which property to analyze before running anything else.
 3. If any call fails with an authentication or subscription error, stop and tell the user to run `/mcp` to (re)authenticate, and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required.
 

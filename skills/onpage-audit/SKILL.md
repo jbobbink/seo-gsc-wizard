@@ -5,11 +5,11 @@ description: Run a technical on-page audit of a set of pages on a Search Console
 
 # On-Page Audit
 
-Crawl a chosen set of pages on one property, run the technical on-page checks on each, and report the issues grouped by severity with the affected URLs and the fix. `$ARGUMENTS` may contain a property, a list of URLs, a sitemap URL, a section path (for example "/blog/"), or a page count; use it to skip resolution and to narrow the URL set. This skill reads the pages' own HTML. For whether Google indexed them, run the indexing-health skill.
+Crawl a chosen set of pages on one property, run the technical on-page checks on each, and report the issues grouped by severity with the affected URLs and the fix. The user's request may contain a property, a list of URLs, a sitemap URL, a section path (for example "/blog/"), or a page count; use it to skip resolution and to narrow the URL set. This skill reads the pages' own HTML. For whether Google indexed them, run the indexing-health skill.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
    - The property also bounds the crawl: `audit_onpage_seo` fetches only URLs that belong to it (a domain property covers its subdomains, a URL-prefix property only its own origin and path prefix) and lists any other URL in `skipped` with a reason, so a URL on another host needs its own property.
 
 2. **Choose the URL set.** Take the first source that applies, and keep the whole workflow to about 25 to 50 pages unless the user asks for more, because every page is fetched live from the user's site.

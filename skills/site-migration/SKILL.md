@@ -5,14 +5,14 @@ description: Check a site migration (a domain move, an HTTP to HTTPS switch, a U
 
 # Site Migration Check
 
-Read out a site migration before or after go-live: how much of the old traffic the new setup has recovered, where the losses sit, which old URLs are unmapped or failing, and what to fix first. `$ARGUMENTS` may contain the old and new property, a go-live date, a saved migration name, a mapping label, a URL prefix or regex pair for a move inside one property, or a focus such as "redirects" or "losers".
+Read out a site migration before or after go-live: how much of the old traffic the new setup has recovered, where the losses sit, which old URLs are unmapped or failing, and what to fix first. The user's request may contain the old and new property, a go-live date, a saved migration name, a mapping label, a URL prefix or regex pair for a move inside one property, or a focus such as "redirects" or "losers".
 
 ## Steps
 
-1. **Resolve the properties.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. A migration has two sides:
+1. **Resolve the properties.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. A migration has two sides:
    - for a domain move, side A is the old property and side B the new one, and both must be in `list_sites`;
    - for a protocol switch or a URL restructure inside one property, both sides are the same property split by a URL prefix or a regex;
-   - the go-live date is required: ask for it when neither `$ARGUMENTS` nor a saved migration supplies one, because `get_migration_health` refuses to run without a `goLiveDate` or a `migrationId` that carries one.
+   - the go-live date is required: ask for it when neither the user's request nor a saved migration supplies one, because `get_migration_health` refuses to run without a `goLiveDate` or a `migrationId` that carries one.
 
 2. **Saved migrations.** Call `list_migrations` (no arguments).
    - Each entry carries `id`, `name`, `mode` (`cross-property`, `two-urls` or `regex`), `siteUrlA`, `siteUrlB`, `urlPrefixA` / `urlPrefixB` or `regexA` / `regexB`, `goLiveDate`, `windowStrategy`, `windowDays`, `yoyBaseline`, `mappingLabel`, `alertsEnabled`, `lastCheckedAt` and `lastHealth` (the daily re-check's last status, recovery, risk score and problem counts).

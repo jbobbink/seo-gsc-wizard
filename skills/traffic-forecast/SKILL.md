@@ -5,11 +5,11 @@ description: Project future clicks or impressions for a Search Console property 
 
 # Traffic Forecast
 
-Project future clicks or impressions for one property, place the projection next to last year's numbers and the seasonal shape, and say what has to change to beat the baseline. Every projected figure is an estimate and is labelled as one. `$ARGUMENTS` may contain a property, the metric (clicks or impressions), a horizon ("next quarter", "12 months"), a growth target, a conversion rate and average order value for a revenue view, or the window to compare year over year.
+Project future clicks or impressions for one property, place the projection next to last year's numbers and the seasonal shape, and say what has to change to beat the baseline. Every projected figure is an estimate and is labelled as one. The user's request may contain a property, the metric (clicks or impressions), a horizon ("next quarter", "12 months"), a growth target, a conversion rate and average order value for a revenue view, or the window to compare year over year.
 
 ## Steps
 
-1. **Resolve the property and the inputs.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Then translate the horizon into `granularity` and `forecastPeriods`:
+1. **Resolve the property and the inputs.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Then translate the horizon into `granularity` and `forecastPeriods`:
    - "next quarter" is `weekly` with 13 periods, "six months" `weekly` with 26 (the default), "next year" `monthly` with 12.
    - Weekly needs about 105 days of history (13 complete weeks) and monthly about 240 days (6 complete months), because the first and last period of the window are dropped as partial.
 

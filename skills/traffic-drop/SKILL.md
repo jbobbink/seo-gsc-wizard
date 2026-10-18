@@ -5,11 +5,11 @@ description: Diagnose why organic traffic dropped on one Search Console property
 
 # Traffic Drop Diagnosis
 
-Answer "why did my organic traffic drop?" for one Search Console property: date the break, size it, test the usual causes in a fixed order, and name the most probable one with the evidence for and against it. `$ARGUMENTS` may contain a property, the date or period the user noticed the drop ("since mid-September"), a metric (clicks or impressions), and a focus hint such as a country, a device or a site section; honor each by narrowing the windows and the segment checks.
+Answer "why did my organic traffic drop?" for one Search Console property: date the break, size it, test the usual causes in a fixed order, and name the most probable one with the evidence for and against it. The user's request may contain a property, the date or period the user noticed the drop ("since mid-September"), a metric (clicks or impressions), and a focus hint such as a country, a device or a site section; honor each by narrowing the windows and the segment checks.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 
 2. **Date the break.** Call `detect_change_points` with `metric: "clicks"` and `days: 180` (14 to 480). When the user names a period, pass `startDate` and `endDate` instead; `startDate` overrides `days`. Read the response in this order:
    - `changePoints`: each entry carries `date`, `direction`, `beforeMean`, `afterMean` and `changePercent` (the means cover `windowDays` days either side of the break; `segmentMeanBefore` and `segmentMeanAfter` cover the whole segments). Take the latest entry with `direction: "down"`, or the one nearest the date the user complained about, as the break date.

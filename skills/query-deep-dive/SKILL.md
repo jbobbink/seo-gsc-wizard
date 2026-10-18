@@ -5,11 +5,11 @@ description: Build a picture of one query for a Search Console property with the
 
 # Query Deep Dive
 
-Explain everything the connected tools know about one keyword and condense it into a query scorecard, the pages serving it, where it ranks by market and device, and recommendations. `$ARGUMENTS` may contain a property, the query text, a date range, a market or device, and a focus hint such as "compare with Bing"; honor all of them.
+Explain everything the connected tools know about one keyword and condense it into a query scorecard, the pages serving it, where it ranks by market and device, and recommendations. The user's request may contain a property, the query text, a date range, a market or device, and a focus hint such as "compare with Bing"; honor all of them.
 
 ## Workflow
 
-1. **Resolve the property, the query and the window.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property, the query and the window.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
    - Take the query text exactly as given; the tools below match it exactly, and step 2 says what to do when no row matches.
    - Use the last 28 days compared with the previous period unless the user specifies dates. The daily tool takes no comparison parameter, so compare the first and second half of the window yourself and say the delta is derived.
    - GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
@@ -26,7 +26,7 @@ Explain everything the connected tools know about one keyword and condense it in
 
 4. **Markets and devices.** Repeat the same filtered call with `dimensions: ["country"]` and then `dimensions: ["device"]`; country codes come back as lowercase ISO 3166-1 alpha-3 (`usa`) and device values as uppercase (`MOBILE`), and an `equals` filter on either must use that exact case.
    - The overall position is impression-weighted, so a strong rank in a small market can hide a weak rank in the market that matters. Report the position in the top 3 markets and on each device.
-   - Name the market the user cares about when `$ARGUMENTS` gives one, and carry it into step 7's `country`.
+   - Name the market the user cares about when the user's request gives one, and carry it into step 7's `country`.
 
 5. **Cannibalization check.** Call `analyze_cannibalization` with `siteUrl`, the same dates, `minImpressions: 10` and `limit: 1000` (the schema's maximum), and look for the query in `cannibalized`.
    - A row carries `pageCount`, `totalClicks`, `totalImpressions`, `entropy` (Shannon entropy over the pages' impressions: higher means a more even split, which is worse) and `pages` (each with `url`, clicks, impressions, `ctr` and position, most impressions first).

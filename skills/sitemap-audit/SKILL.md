@@ -5,11 +5,11 @@ description: Audit sitemap health and coverage for a Search Console property wit
 
 # Sitemap Audit
 
-Check the sitemaps a property has submitted, measure how much of one sitemap Google actually shows in search, group the URLs that never show by their likely cause, and, when the user wants it, submit or resubmit a published sitemap. `$ARGUMENTS` may contain a property, a sitemap URL, a section path, a date range, or "bing"; use it to skip resolution, pick the sitemap, or widen the engine side. For a diagnosis that spends inspection quota, hand over to the indexing-health skill.
+Check the sitemaps a property has submitted, measure how much of one sitemap Google actually shows in search, group the URLs that never show by their likely cause, and, when the user wants it, submit or resubmit a published sitemap. The user's request may contain a property, a sitemap URL, a section path, a date range, or "bing"; use it to skip resolution, pick the sitemap, or widen the engine side. For a diagnosis that spends inspection quota, hand over to the indexing-health skill.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Note the property's `gscScope` from `list_sites` ("full" or "readonly"): step 6 depends on it. For the Bing side, `list_bing_sites` shows which sites Bing has verified (`isVerified` in `siteDetails`) and answers `notConfigured: true` when Bing Webmaster Tools is not connected.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Note the property's `gscScope` from `list_sites` ("full" or "readonly"): step 6 depends on it. For the Bing side, `list_bing_sites` shows which sites Bing has verified (`isVerified` in `siteDetails`) and answers `notConfigured: true` when Bing Webmaster Tools is not connected.
 
 2. **Submitted sitemaps.** Call `list_sitemaps` with `siteUrl`. Read `sitemaps[]`, sorted by `path`: `lastSubmitted`, `lastDownloaded`, `isPending`, `isSitemapsIndex`, `type`, `warnings`, `errors`, and `contents[]` with `type` and `submitted` per content type.
    - Google has deprecated `contents[].indexed` and it typically reads 0, so never present it as an indexed count or as evidence that nothing is indexed.

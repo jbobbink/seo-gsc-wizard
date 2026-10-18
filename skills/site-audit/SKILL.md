@@ -5,11 +5,11 @@ description: Run a comprehensive SEO health audit of a single Search Console pro
 
 # Site Audit
 
-Run a full SEO health audit of one property and synthesize the results into a verdict and action plan. `$ARGUMENTS` may contain a property name or URL and an optional focus hint (for example "focus on decay"); honor the hint by going deeper on that section, but still run the full audit.
+Run a full SEO health audit of one property and synthesize the results into a verdict and action plan. The user's request may contain a property name or URL and an optional focus hint (for example "focus on decay"); honor the hint by going deeper on that section, but still run the full audit.
 
 ## Step 1: Resolve the property
 
-1. If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
+1. If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
 2. Otherwise call `list_sites`. If exactly one plausible property matches, use it and say so. If several match, show them in a short table and ask the user which one before proceeding.
 3. Use the last 28 days compared with the previous period unless the user specifies dates. You may omit date parameters entirely; the performance tools default to the last 28 settled days with the prior same-length period as comparison. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 

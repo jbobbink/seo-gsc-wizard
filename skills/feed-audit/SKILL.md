@@ -5,11 +5,11 @@ description: Audit the Merchant Center product feed and product titles behind on
 
 # Feed Audit
 
-Audit the Merchant Center feed behind one property: the Feed Score with its failing checks, the title and description hygiene of the catalog, and the products those failures keep out of free listings, ending with rewrite patterns and a fix list. `$ARGUMENTS` may contain a property, a run date (`YYYY-MM-DD`), a check key such as `title_length`, a sample size for the title scan, or "fresh" or "re-run" to ask for a new audit; honor it.
+Audit the Merchant Center feed behind one property: the Feed Score with its failing checks, the title and description hygiene of the catalog, and the products those failures keep out of free listings, ending with rewrite patterns and a fix list. The user's request may contain a property, a run date (`YYYY-MM-DD`), a check key such as `title_length`, a sample size for the title scan, or "fresh" or "re-run" to ask for a new audit; honor it.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Read the latest audit before queueing anything.** Call `get_feed_audit_results` with `siteUrl`, optionally `runDate` for one dated run (`limit` defaults to 100, max 500, but the checks list never exceeds 21 rows). Read `run` first: `run: null` means no audit has run yet, so go to step 3. Otherwise read, from `run`:
    - `status` (`pending`, `crawling`, `scoring`, `completed` or `failed`, with `error` on a failure), `runDate` and `completedAt`.

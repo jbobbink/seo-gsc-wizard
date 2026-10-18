@@ -7,12 +7,12 @@ description: Detect and resolve keyword cannibalization in Google Search Console
 
 Find queries where several pages of one property compete against each other, decide which page should win each cluster, and recommend concrete fixes. All data comes from the GSC Wizard MCP tools.
 
-Optional user input: `$ARGUMENTS` may contain a property (site URL or domain), a date range, or a focus hint such as a specific query or URL path. Honor it when present.
+Optional user input: the user's request may contain a property (site URL or domain), a date range, or a focus hint such as a specific query or URL path. Honor it when present.
 
 ## Workflow
 
 1. **Resolve the property.**
-   - If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
+   - If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`.
    - Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Set the date range.**

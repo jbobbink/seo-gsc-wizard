@@ -5,11 +5,11 @@ description: Measure how much of a Search Console property lives in the long tai
 
 # Long-tail Analysis
 
-Quantify the head-versus-tail shape of one property, measure the share of its traffic that no query or page row carries, and turn the named tail into themes worth a page. `$ARGUMENTS` may contain a property (a GSC site URL or a recognizable name), a date range, a `preset` hint (for example "ecommerce" or "small site"), or a focus such as a topic or a URL path to concentrate the theme step on.
+Quantify the head-versus-tail shape of one property, measure the share of its traffic that no query or page row carries, and turn the named tail into themes worth a page. The user's request may contain a property (a GSC site URL or a recognizable name), a date range, a `preset` hint (for example "ecommerce" or "small site"), or a focus such as a topic or a URL path to concentrate the theme step on.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing.
 
 2. **Fix one window.** Use the last 28 days compared with the previous period unless the user specifies dates. Every tool below defaults to the last 28 settled days when `startDate` and `endDate` are omitted, so either omit both everywhere or pass the same explicit pair everywhere; mixing the two misaligns the shares. Each response echoes the window it covered (`range`, or `startDate`/`endDate` on `query_search_analytics`), which is the range to cite.
    - GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.

@@ -5,11 +5,11 @@ description: Keep a change log on a Search Console property's charts with the GS
 
 # Annotations and Change Impact
 
-Keep the property's change log complete (every deploy, content launch, redirect, migration or campaign on the chart, with Google's own updates alongside) and, for one change the user asks about, say whether the numbers moved and whether the move can be tied to it. `$ARGUMENTS` may contain the property, a date or date range, an event to log, an annotation to edit or delete, or the change to measure; honor what is given.
+Keep the property's change log complete (every deploy, content launch, redirect, migration or campaign on the chart, with Google's own updates alongside) and, for one change the user asks about, say whether the numbers moved and whether the move can be tied to it. The user's request may contain the property, a date or date range, an event to log, an annotation to edit or delete, or the change to measure; honor what is given.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. An account-wide note (a tool change, a team event) needs no property; everything that goes on one property's chart does.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. An account-wide note (a tool change, a team event) needs no property; everything that goes on one property's chart does.
 
 2. **Read the change log.** Call `list_annotations` with `siteUrl`, `startDate` and `endDate` (YYYY-MM-DD; both optional, so use the last 90 days unless the user gives a range). Without `siteUrl` the property's own notes are not read, only platform and account ones. Rows carry `id`, `scope`, `event_date`, `label`, `description`, `category`, `color` and `external_source`, newest first:
 

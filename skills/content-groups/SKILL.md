@@ -5,11 +5,11 @@ description: Define and measure content groups, the URL-rule segments (blog, pro
 
 # Content Groups
 
-Define URL-rule based content groups on one property and measure how each group performs, so the user sees which parts of the site carry the organic traffic and which pages fall outside every group. `$ARGUMENTS` may contain a property, a date range, a focus hint (a folder, a group name, "propose groups"), or an instruction to create, edit or delete a group; honor it when present.
+Define URL-rule based content groups on one property and measure how each group performs, so the user sees which parts of the site carry the organic traffic and which pages fall outside every group. The user's request may contain a property, a date range, a focus hint (a folder, a group name, "propose groups"), or an instruction to create, edit or delete a group; honor it when present.
 
 ## Workflow
 
-1. **Resolve the property.** If `$ARGUMENTS` or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
+1. **Resolve the property.** If the user's request or the conversation names a property, use it. Site URLs use GSC formats: `sc-domain:example.com` or `https://www.example.com/`. Otherwise call `list_sites` and pick the obvious match. If several plausible properties exist, ask the user which one before continuing. Use the last 28 days compared with the previous period unless the user specifies dates. GSC data lags about 2 to 3 days: never treat the most recent 2 days as complete, and if a dip appears at the very edge of the range, say it is likely reporting lag, not a real drop.
 
 2. **Read the saved groups.** Call `list_content_groups` with `siteUrl` and read:
    - `groups`: each entry carries `id`, `name`, `description`, `rules`, `color` and `created_at`, sorted by name;
