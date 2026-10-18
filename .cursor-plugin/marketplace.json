@@ -5,14 +5,14 @@
     "email": "support@gscwizard.com"
   },
   "metadata": {
-    "description": "GSC Wizard plugin for Cursor: Google Search Console, Bing and GA4 SEO analysis via the GSC Wizard MCP server.",
-    "version": "1.0.1"
+    "description": "GSC Wizard plugin for Cursor: Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster SEO analysis via the GSC Wizard MCP server, with 38 guided skills.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "seo-gsc-wizard",
       "source": "./",
-      "description": "SEO audits, content decay, cannibalization, quick wins, indexing health and weekly reports from your Search Console data."
+      "description": "SEO audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports from your Search Console, GA4, Bing, Yandex and Merchant Center data."
     }
   ]
 }

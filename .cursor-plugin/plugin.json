@@ -1,8 +1,8 @@
 {
   "name": "seo-gsc-wizard",
   "displayName": "SEO GSC Wizard",
-  "version": "1.0.1",
-  "description": "Analyze your Google Search Console, Bing and GA4 data in Cursor. Run SEO site audits, find content decay, cannibalization and quick wins, check indexing, and get weekly reports.",
+  "version": "1.1.0",
+  "description": "Analyze your Google Search Console, Bing, GA4, Merchant Center and Yandex data in Cursor. 38 guided SEO skills: site audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports.",
   "author": {
     "name": "GSC Wizard",
     "email": "support@gscwizard.com",
@@ -19,11 +19,18 @@
     "bing-webmaster-tools",
     "google-analytics",
     "ga4",
+    "merchant-center",
+    "yandex-webmaster",
     "site-audit",
     "technical-seo",
+    "keyword-rankings",
     "content-decay",
     "keyword-cannibalization",
     "indexing",
+    "indexnow",
+    "core-web-vitals",
+    "site-migration",
+    "seo-forecasting",
     "seo-reporting"
   ],
   "logo": "assets/icon.png"

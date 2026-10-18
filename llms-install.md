@@ -27,7 +27,7 @@ Cline opens the browser to authorize. The user signs in to GSC Wizard (Google si
 ## Requirements to tell the user about
 
 - A GSC Wizard account (https://www.gscwizard.com) with an active plan or free trial.
-- Their Google account connected to GSC Wizard with Search Console access. GA4 and Bing Webmaster Tools are optional extra connections made in the GSC Wizard app.
+- Their Google account connected to GSC Wizard with Search Console access. GA4, Bing Webmaster Tools, Yandex Webmaster and Google Merchant Center are optional extra connections made in the GSC Wizard app.
 
 ## Verify
 

@@ -29,8 +29,8 @@ const checkOnly = process.argv.includes("--check");
 
 // The OpenAI portal's package id for the GSC Wizard plugin (Metadata > Package name).
 const OPENAI_PACKAGE_NAME = "app-6a258ab1e0908191aa647c33299ad14c";
-// Bump for every upload; the portal held 1.0.0 to 3.0.0 when this was set.
-const OPENAI_VERSION = "3.0.2";
+// Bump for every upload; the portal held 1.0.0 to 3.0.3 when this was set.
+const OPENAI_VERSION = "3.0.4";
 
 // The listing's About text. Adapted from app_info.description in the
 // monorepo's MCP/scripts/gen-submission.mjs, but it must name no AI assistant,
@@ -38,11 +38,12 @@ const OPENAI_VERSION = "3.0.2";
 // "name or description references another AI assistant, model, or platform"
 // (it flagged "ChatGPT and Perplexity" here). FORBIDDEN below enforces it.
 const OPENAI_LONG_DESCRIPTION =
-  "GSC Wizard connects to your own Google Search Console properties so you can analyze SEO performance in plain language. Ask for a performance summary, your top queries and pages, ranking changes between two periods, content decay, keyword cannibalization, CTR-versus-position curves, or a full SEO report, and get a finished answer back. Deeper analysis runs on request: anomaly and change-point detection to date a traffic shift, traffic forecasting, long-tail query clustering, Core Web Vitals, experiment results, before-and-after migration comparisons, and live on-page audits. Segment any of it by your own content groups, topic clusters, or branded versus non-branded queries. Where you connect Bing Webmaster Tools, the same questions cover Bing as well: traffic, queries, pages, crawl issues, and inbound links. It also reports on your linked Google Analytics 4 properties: traffic overviews, dimension breakdowns, ecommerce, key events (conversions), and traffic referred by AI assistants. You can inspect URLs with Google's URL Inspection, track indexing, submit URLs to IndexNow, and build shareable client reports. Instead of streaming thousands of raw rows into the model, every analysis is computed server-side against a data warehouse, so results are fast, accurate, and token-efficient. Summary tools render interactive cards and tables directly in the conversation. All access is scoped to your own account through Google sign-in.";
+  "GSC Wizard connects to your own Google Search Console properties so you can analyze SEO performance in plain language. Ask for a performance summary, your top queries and pages, ranking changes between two periods, content decay, keyword cannibalization, CTR-versus-position curves, or a full SEO report, and get a finished answer back. Deeper analysis runs on request: anomaly and change-point detection to date a traffic shift, traffic forecasting, long-tail query clustering, Core Web Vitals, experiment results, before-and-after migration comparisons, and live on-page audits. Segment any of it by your own content groups, topic clusters, or branded versus non-branded queries. Where you connect Bing Webmaster Tools, the same questions cover Bing as well: traffic, queries, pages, crawl issues, and inbound links. It also reports on your linked Google Analytics 4 properties: traffic overviews, dimension breakdowns, ecommerce, key events (conversions), and traffic referred by AI assistants. Where you link Google Merchant Center, it covers your shopping catalog as well: Merchant Listings and organic shopping performance, product listing status and account health, title and description hygiene, a feed audit, price competitiveness against the market, best sellers, and competitive visibility. Where you connect Yandex Webmaster, it adds Yandex queries, indexing history, and site quality. You can inspect URLs with Google's URL Inspection, track indexing, submit URLs to IndexNow, and build shareable client reports. Instead of streaming thousands of raw rows into the model, every analysis is computed server-side against a data warehouse, so results are fast, accurate, and token-efficient. Summary tools render interactive cards and tables directly in the conversation. All access is scoped to your own account through Google sign-in.";
 
 // The Claude-facing manifest description names Claude; the OpenAI listing must not.
 const OPENAI_DESCRIPTION =
-  "Google Search Console, Bing Webmaster and GA4 analytics: 100+ SEO tools plus guided " +
+  "Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster " +
+  "analytics: 130+ SEO tools plus 38 guided " +
   "workflows for site audits, content decay, keyword cannibalization, quick wins, " +
   "indexing health and weekly reporting.";
 
@@ -124,6 +125,13 @@ function buildManifest() {
   manifest.version = OPENAI_VERSION;
   manifest.description = OPENAI_DESCRIPTION;
   manifest.skills = "./skills/"; // required by the OpenAI manifest schema
+  // The portal refuses a version that drops the published plugin's MCP: "This
+  // package omits the plugin's existing MCP ... Removing the MCP isn't
+  // supported." Neither agents/openai.yaml nor an .app.json app mapping counts;
+  // it needs the server URL in .mcp.json. An .app.json is itself a blocking
+  // finding ("Plugins with .app.json cannot be submitted. Declare an MCP server
+  // URL instead"), so the bundle ships none.
+  manifest.mcpServers = "./.mcp.json";
 
   // The portal REPLACES its listing metadata with the manifest's `interface` on
   // upload, so a field missing here shows up blank there (and a blank privacy
@@ -133,7 +141,7 @@ function buildManifest() {
     displayName: _displayName,
     icon,
     documentationUrl: _documentationUrl,
-    supportUrl: _supportUrl,
+    supportUrl,
     privacyPolicyUrl,
     termsOfServiceUrl,
     ...rest
@@ -151,6 +159,8 @@ function buildManifest() {
       websiteURL: manifest.homepage,
       privacyPolicyURL: privacyPolicyUrl,
       termsOfServiceURL: termsOfServiceUrl,
+      // Blocking finding without it: "Support URL is required".
+      supportURL: supportUrl,
       composerIcon: icon,
       logo: icon,
     },
@@ -180,6 +190,11 @@ if (skillNames.length === 0) throw new Error("no skills found under skills/");
 
 const files = new Map();
 files.set(".claude-plugin/plugin.json", `${JSON.stringify(buildManifest(), null, 2)}\n`);
+files.set(
+  ".mcp.json",
+  `${JSON.stringify({ mcpServers: { [MCP_SERVER.name]: { type: "http", url: MCP_SERVER.url } } }, null, 2)}
+`,
+);
 files.set("agents/openai.yaml", buildAgentsYaml());
 // The manifest's composerIcon/logo point here; without it the portal reports
 // "App icon required".

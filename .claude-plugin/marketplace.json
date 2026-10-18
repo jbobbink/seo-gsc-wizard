@@ -1,6 +1,6 @@
 {
   "name": "seo-gsc-wizard",
-  "description": "GSC Wizard: Google Search Console, Bing Webmaster and GA4 SEO analytics for Claude",
+  "description": "GSC Wizard: Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster SEO analytics for Claude, with 38 guided skills",
   "owner": {
     "name": "GSC Wizard",
     "url": "https://www.gscwizard.com"
@@ -9,7 +9,7 @@
     {
       "name": "seo-gsc-wizard",
       "source": "./",
-      "description": "Analyze your Google Search Console, Bing and GA4 data in Claude. Run SEO site audits, find content decay, cannibalization and quick wins, check indexing, and get weekly reports."
+      "description": "Analyze your Google Search Console, Bing, GA4, Merchant Center and Yandex data in Claude. 38 guided SEO skills: site audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports."
     }
   ]
 }
