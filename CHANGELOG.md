@@ -4,6 +4,7 @@ Users of the Claude Code plugin, the Cursor plugin and the Gemini CLI extension 
 
 ## 1.1.2 (2026-10-23)
 
+- The OpenAI skill-bundle build script moved out of this repository (it read the icon, which the directory scan holds a plugin for); `npm run check` now runs the skill check only.
 - Four skills removed: annotations, feed-audit, seo-revenue and topic-clusters. The directory scan held every version since 1.1.0 on exactly these four files under "Uses a credential from the user's machine", although none of them reads anything outside the MCP tools; removing them tests whether the hold follows the files. They are unchanged in git history (commit 0dbf49b) and come back once the scan or a reviewer clears them. Until then, the annotation edit tools, the topic cluster tools, the feed audit tools and the GA4 ecommerce tool have no guided skill, but every MCP tool stays available.
 
 ## 1.1.1 (2026-10-18)

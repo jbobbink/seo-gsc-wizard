@@ -3,8 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node scripts/check-skills.mjs && node scripts/build-openai-bundle.mjs --check",
-    "check:skills": "node scripts/check-skills.mjs",
-    "build:openai": "node scripts/build-openai-bundle.mjs"
+    "check": "node scripts/check-skills.mjs"
   }
 }

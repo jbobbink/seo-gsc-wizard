@@ -117,34 +117,13 @@ cp -r seo-gsc-wizard/skills/* ~/.openclaw/workspace/skills/
 
 **1. Create a read-only API key.** In GSC Wizard, go to [Account → API keys](https://tool.gscwizard.com/account/api-keys), create a key and leave the scope on **Read only**. The key is shown once, so copy it straight away. A read-only key is refused by every tool that changes something before that tool runs, so even a prompt-injected agent cannot submit, delete or edit anything.
 
-**2. Add the server** to `~/.openclaw/openclaw.json`:
-
-```json5
-{
-  mcp: {
-    servers: {
-      "gsc-wizard": {
-        url: "https://mcp.gscwizard.com/mcp",
-        transport: "streamable-http",
-        headers: { Authorization: "Bearer <read-only key>" }
-      }
-    }
-  }
-}
-```
-
-Then check the connection:
+**2. Add the server.** Register `https://mcp.gscwizard.com/mcp` under `mcp.servers` in `~/.openclaw/openclaw.json` with the `streamable-http` transport and the key you just created, then check the connection:
 
 ```
 openclaw mcp doctor gsc-wizard --probe
 ```
 
-Two settings that many guides get wrong:
-
-- The key is `mcp.servers`, not `mcpServers`. `mcpServers` is the Claude Desktop format.
-- Set `transport` explicitly. Without it OpenClaw uses SSE, and this server only speaks Streamable HTTP, so the connection fails silently.
-
-Once the probe passes, move the key out of the literal header into OpenClaw's secrets mechanism, and never commit the file.
+The exact `openclaw.json` entry, the two settings most guides get wrong (the key is `mcp.servers`, not `mcpServers`, and `transport` has to be set because without it OpenClaw uses SSE while this server only speaks Streamable HTTP), and how to keep the key in OpenClaw's secrets store instead of the config file are on the [OpenClaw setup page](https://www.gscwizard.com/openclaw-continuous-seo-analysis.html).
 
 **3. Schedule a skill** (optional). For example, a weekly report posted to Slack every Monday:
 
@@ -185,7 +164,7 @@ Each skill is one `SKILL.md`: a description with the phrasings that trigger it, 
 - Before any tool that writes, list the exact items and ask for confirmation.
 - Every figure names the tool and the date range it came from.
 
-`npm run check` verifies that each skill only references tools that exist on the server (`scripts/mcp-tool-names.txt`), carries the fixed paragraphs, stays provider-neutral and is listed in this README, and that the OpenAI skill bundle still builds. It runs on every push.
+`npm run check` verifies that each skill only references tools that exist on the server (`scripts/mcp-tool-names.txt`), carries the fixed paragraphs, stays provider-neutral and is listed in this README. It runs on every push.
 
 ## Privacy and security
 
