@@ -2,6 +2,10 @@
 
 Users of the Claude Code plugin, the Cursor plugin and the Gemini CLI extension only receive changes when the `version` in all three manifests is bumped, so every entry here corresponds to one bump.
 
+## 1.1.2 (2026-10-23)
+
+- Four skills removed: annotations, feed-audit, seo-revenue and topic-clusters. The directory scan held every version since 1.1.0 on exactly these four files under "Uses a credential from the user's machine", although none of them reads anything outside the MCP tools; removing them tests whether the hold follows the files. They are unchanged in git history (commit 0dbf49b) and come back once the scan or a reviewer clears them. Until then, the annotation edit tools, the topic cluster tools, the feed audit tools and the GA4 ecommerce tool have no guided skill, but every MCP tool stays available.
+
 ## 1.1.1 (2026-10-18)
 
 - Skills no longer use the `$ARGUMENTS` placeholder; they say "the user's request" instead. Claude Code appends the typed arguments to a skill without the placeholder, so nothing changes for users, and the directory scan no longer sees an environment-variable token in the skills.

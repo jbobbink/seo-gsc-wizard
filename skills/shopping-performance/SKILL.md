@@ -58,7 +58,7 @@ Present the findings in this order:
 
 5. **Competitor visibility.** The `domains[]` roll-up from `get_gmc_competitors`: your domain first, then the domains above it with relative visibility (as a ratio), page overlap and higher-position rate (as percentages, converted from fractions).
 
-6. **Recommendations.** End with a short prioritized list of 3 to 7 concrete recommendations: which above-market prices to test against the suggested price, which high-impression offers need title, image or price work, which missing clusters are worth stocking, which competitor overlap to watch. When the question drifts to disapprovals, feed uploads or account issues, run the merchant-center-health skill; for feed attribute quality and titles, run the feed-audit skill.
+6. **Recommendations.** End with a short prioritized list of 3 to 7 concrete recommendations: which above-market prices to test against the suggested price, which high-impression offers need title, image or price work, which missing clusters are worth stocking, which competitor overlap to watch. When the question drifts to disapprovals, feed uploads or account issues, run the merchant-center-health skill; for feed attribute quality and titles, point the user to the Feed Audit and Title Hygiene reports in the app.
 
 ## Error handling
 

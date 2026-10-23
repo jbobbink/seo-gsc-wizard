@@ -43,7 +43,7 @@ const OPENAI_LONG_DESCRIPTION =
 // The Claude-facing manifest description names Claude; the OpenAI listing must not.
 const OPENAI_DESCRIPTION =
   "Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster " +
-  "analytics: 130+ SEO tools plus 38 guided " +
+  "analytics: 130+ SEO tools plus 34 guided " +
   "workflows for site audits, content decay, keyword cannibalization, quick wins, " +
   "indexing health and weekly reporting.";
 

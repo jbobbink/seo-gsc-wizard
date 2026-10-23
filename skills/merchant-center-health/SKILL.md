@@ -54,7 +54,7 @@ Present the findings in this order:
 | Rank | Offer | Title | Status | Top issue | Resolution |
 |---|---|---|---|---|---|
 
-5. **Recommendations.** End with a short prioritized list of 3 to 7 concrete recommendations, ordered by clicks at stake: resolve the account issue or claim the website, fix or re-upload the failing primary feed, correct the top `MERCHANT_ACTION` issue codes on the highest-potential products, and wait out the `PENDING_PROCESSING` ones. When the question drifts to feed attribute quality or product titles, run the feed-audit skill; for how the visible products perform, run the shopping-performance skill.
+5. **Recommendations.** End with a short prioritized list of 3 to 7 concrete recommendations, ordered by clicks at stake: resolve the account issue or claim the website, fix or re-upload the failing primary feed, correct the top `MERCHANT_ACTION` issue codes on the highest-potential products, and wait out the `PENDING_PROCESSING` ones. When the question drifts to feed attribute quality or product titles, point the user to the Feed Audit and Title Hygiene reports in the app; for how the visible products perform, run the shopping-performance skill.
 
 ## Error handling
 

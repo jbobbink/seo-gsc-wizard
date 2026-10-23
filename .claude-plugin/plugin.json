@@ -1,8 +1,8 @@
 {
   "name": "seo-gsc-wizard",
   "displayName": "SEO GSC Wizard",
-  "description": "Analyze your Google Search Console, Bing, GA4, Merchant Center and Yandex data in Claude. 38 guided SEO skills: site audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports.",
-  "version": "1.1.1",
+  "description": "Analyze your Google Search Console, Bing, GA4, Merchant Center and Yandex data in Claude. 34 guided SEO skills: site audits, traffic-drop diagnosis, content decay, cannibalization, quick wins, CTR rewrites, indexing, migrations, forecasts, shopping feeds and client reports.",
+  "version": "1.1.2",
   "icon": "./assets/icon.png",
   "author": {
     "name": "GSC Wizard",

@@ -40,7 +40,7 @@ Read the Google Analytics 4 property linked to one Search Console site and prese
 - Present every multi-row result as a compact markdown table (top rows only, typically 5 to 10); keep prose for interpretation, not for restating numbers.
 - Judge changes by the sessions and key events at stake, not by percentage alone: a channel that doubled from 20 sessions matters less than a 10% move on the organic channel.
 - Do not fabricate rows the tools did not return; when a breakdown is empty, say so and move on.
-- Keep Search Console questions (clicks, queries, rankings) out of this skill: refer the agent to the site-audit skill for the search side and to the seo-revenue skill when the question is which pages and queries make money.
+- Keep Search Console questions (clicks, queries, rankings) out of this skill: refer the agent to the site-audit skill for the search side; for which landing pages make money, `get_blended_landing_pages` joins the two sides per page and the page-deep-dive skill reads it.
 
 ## Output
 

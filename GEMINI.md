@@ -8,9 +8,9 @@ The `gsc-wizard` MCP server gives you the user's own Google Search Console, Bing
 - Before any tool that submits, creates, updates or deletes something, list the exact items and ask the user to confirm.
 - If a tool fails with an authentication or subscription error, tell the user to run `/mcp auth gsc-wizard` and that a GSC Wizard account with an active plan or trial plus a connected Google Search Console account is required.
 - The bundled skills describe complete workflows; follow one when the request matches:
-  - Diagnose and report: site-audit, weekly-report, traffic-drop, anomaly-check, ranking-changes, annotations, client-report, portfolio-overview
-  - Content and queries: content-decay, cannibalization, quick-wins, ctr-optimization, page-deep-dive, query-deep-dive, long-tail-analysis, branded-split, country-device, content-groups, topic-clusters
+  - Diagnose and report: site-audit, weekly-report, traffic-drop, anomaly-check, ranking-changes, client-report, portfolio-overview
+  - Content and queries: content-decay, cannibalization, quick-wins, ctr-optimization, page-deep-dive, query-deep-dive, long-tail-analysis, branded-split, country-device, content-groups
   - Technical and indexing: indexing-health, indexing-tracker, indexnow-submit, sitemap-audit, onpage-audit, core-web-vitals, site-migration, experiment-results, traffic-forecast, property-setup
-  - GA4 and revenue: ga4-overview, seo-revenue, ai-assistant-traffic
+  - GA4 and revenue: ga4-overview, ai-assistant-traffic
   - Bing and Yandex: bing-performance, bing-crawl-health, yandex-performance
-  - Merchant Center: merchant-center-health, shopping-performance, feed-audit
+  - Merchant Center: merchant-center-health, shopping-performance

@@ -51,7 +51,7 @@ Define URL-rule based content groups on one property and measure how each group 
 - Present every multi-row result as a compact markdown table (top rows only, typically 5 to 10); keep prose for interpretation, not for restating numbers.
 - Judge groups by the clicks and impressions at stake, not by percentage change alone: a 30% drop on a 20-click group matters less than a 5% drop on the group holding half the traffic.
 - An uncategorized bucket above roughly 15% of clicks means the groups do not yet describe the site; propose rules from its top pages. A group with many `pages` but few clicks is a thin section; for a page-level triage of it run the content-decay skill, and for a full picture the site-audit skill.
-- Do not fabricate rows the tools did not return. For keyword or theme segmentation over queries rather than URLs, run the topic-clusters skill instead.
+- Do not fabricate rows the tools did not return.
 
 ## Output
 

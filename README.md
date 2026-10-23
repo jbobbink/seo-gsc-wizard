@@ -1,13 +1,13 @@
 # GSC Wizard for AI Agents & Assistants
 
-Bring your Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster data into Claude Code, OpenClaw, Cursor, Gemini CLI and other MCP clients. This repository connects your agent to the [GSC Wizard](https://www.gscwizard.com) MCP server (130+ SEO analytics tools) and bundles 38 guided skills for the workflows SEO professionals run most.
+Bring your Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster data into Claude Code, OpenClaw, Cursor, Gemini CLI and other MCP clients. This repository connects your agent to the [GSC Wizard](https://www.gscwizard.com) MCP server (130+ SEO analytics tools) and bundles 34 guided skills for the workflows SEO professionals run most.
 
 The server does the statistics itself (anomaly detection, change points, decay, cannibalization, forecasts, migration health) and returns finished results, so the model explains a result instead of computing trends over whatever raw rows fit in its context window. Every skill also requires every figure it reports to name the tool and date range it came from.
 
 ## What you get
 
 - **130+ MCP tools**: search analytics (queries, pages, countries, devices), ranking changes, anomaly and change-point detection, content decay, keyword cannibalization, CTR-curve analysis, opportunity scoring, topic clusters, content groups, URL inspection and indexing tracking, sitemaps, IndexNow, Core Web Vitals, SEO experiments, migration comparisons, traffic forecasting, Bing Webmaster stats, Yandex Webmaster stats, GA4 reports (including traffic referred by AI assistants), Merchant Center listings, pricing and feed audits, annotations, shared client reports and more.
-- **38 guided skills** that orchestrate those tools end to end. Each one resolves the property, picks lag-safe date windows, calls the right tools with the right arguments, interprets the result and ends with a prioritized list of actions.
+- **34 guided skills** that orchestrate those tools end to end. Each one resolves the property, picks lag-safe date windows, calls the right tools with the right arguments, interprets the result and ends with a prioritized list of actions.
 
 ### Diagnose and report
 
@@ -18,7 +18,6 @@ The server does the statistics itself (anomaly detection, change points, decay, 
 | `/seo-gsc-wizard:traffic-drop` | Date a traffic drop, test the causes in order and name the most probable one |
 | `/seo-gsc-wizard:anomaly-check` | Quiet scheduled check that replies in one line unless something needs a human |
 | `/seo-gsc-wizard:ranking-changes` | Winners and losers between any two periods, by query and by page |
-| `/seo-gsc-wizard:annotations` | Log site changes on the charts and measure what each one did |
 | `/seo-gsc-wizard:client-report` | Generate a styled report and share it through the client portal |
 | `/seo-gsc-wizard:portfolio-overview` | Every property on the account at once, with tags and the sites that need attention |
 
@@ -36,7 +35,6 @@ The server does the statistics itself (anomaly detection, change points, decay, 
 | `/seo-gsc-wizard:branded-split` | Branded versus non-branded performance and the keywords that define the split |
 | `/seo-gsc-wizard:country-device` | Market and device performance, with the gaps worth fixing |
 | `/seo-gsc-wizard:content-groups` | Define URL-based content groups and measure each one |
-| `/seo-gsc-wizard:topic-clusters` | Define keyword-based topic clusters and measure each one |
 
 ### Technical and indexing
 
@@ -58,7 +56,6 @@ The server does the statistics itself (anomaly detection, change points, decay, 
 | Skill | What it does |
 | :---- | :----------- |
 | `/seo-gsc-wizard:ga4-overview` | GA4 traffic, conversions, error pages and custom dimensions for the linked property |
-| `/seo-gsc-wizard:seo-revenue` | Which queries and landing pages make money, from the GSC and GA4 join |
 | `/seo-gsc-wizard:ai-assistant-traffic` | Traffic referred by AI assistants and the AI-shaped queries in Search Console |
 
 ### Bing and Yandex
@@ -75,7 +72,6 @@ The server does the statistics itself (anomaly detection, change points, decay, 
 | :---- | :----------- |
 | `/seo-gsc-wizard:merchant-center-health` | Account issues, feed processing and the products that are not eligible |
 | `/seo-gsc-wizard:shopping-performance` | Free-listing performance, price position, best sellers and competitor visibility |
-| `/seo-gsc-wizard:feed-audit` | Run the feed audit, read the score and fix titles and failing checks |
 
 Claude also invokes these skills automatically when your request matches, so "why is my site losing traffic?" works without remembering a command name. The command names above are Claude Code's; in other agents each skill goes by its folder name (`site-audit`, `weekly-report`, ...). Every skill is a plain `SKILL.md` you can read before running it; there are no scripts in the skill folders.
 
@@ -162,7 +158,7 @@ openclaw automations create "10 8 * * 1" \
 
 Use `--session isolated` rather than Heartbeat: Heartbeat runs every 30 minutes by default and Search Console data does not change that often. `HEARTBEAT.md` is no longer read, so do not build on it. For a daily check, schedule `anomaly-check` on weekdays: it replies with one line when nothing happened and only expands when a spike, a drop or a sustained level shift needs a human. An agent that posts a wall of green every morning gets muted.
 
-**With a read-only key:** every skill runs. The steps that write are refused and the skill says so and continues: IndexNow and sitemap submission, tracker changes, content group and topic cluster edits, branded keywords, annotations, shared reports, redirect mappings and feed audit runs. `indexing-health` inspects URLs one by one with `inspect_url` when the batch inspection tool is refused. If you want the write steps, create a separate read & write key for an attended agent rather than widening the scheduled one.
+**With a read-only key:** every skill runs. The steps that write are refused and the skill says so and continues: IndexNow and sitemap submission, tracker changes, content group edits, branded keywords, annotations, shared reports and redirect mappings. `indexing-health` inspects URLs one by one with `inspect_url` when the batch inspection tool is refused. If you want the write steps, create a separate read & write key for an attended agent rather than widening the scheduled one.
 
 **Security:** keep browser and `web_fetch` tools away from the agent that holds the key, and read any SEO skill before you install it, from this repository or from ClawHub.
 
@@ -176,7 +172,6 @@ Use `--session isolated` rather than Heartbeat: Heartbeat runs every 30 minutes 
 - "Why aren't my new product pages indexed?"
 - "Which titles should I rewrite for a better click-through rate?"
 - "How did the migration to the new domain go?"
-- "Which queries bring in revenue?"
 - "Are my products eligible for free listings, and how are they priced against the market?"
 
 ## How the skills are built

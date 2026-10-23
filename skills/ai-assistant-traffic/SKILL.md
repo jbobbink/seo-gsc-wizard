@@ -48,7 +48,7 @@ Pass `buckets: ["reply_artefact", "pivot_follow_up", "conversational_question"]`
 - Present every multi-row result as a compact markdown table (top rows only, typically 5 to 10); keep prose for interpretation, not for restating numbers. Weigh by sessions, clicks and impressions at stake, not by percentage alone: a share that doubled from 0.2% to 0.4% is still small.
 - Do not fabricate rows the tools did not return. Keep assistant names exactly as the `assistants` rows carry them, and never attribute a query to a specific assistant, since Search Console records none.
 - Recommendations stay inside these numbers: which pages to keep accurate, current and fast because assistants send people to them, which converting landing pages deserve the same care, where key events or revenue tracking is missing on assistant landing pages, and which tracker-probe or harness queries to exclude from keyword work. Do not add speculative advice about how to appear in assistants.
-- For the wider search picture refer the agent to the site-audit skill, and for the money behind these pages to the seo-revenue skill.
+- For the wider search picture refer the agent to the site-audit skill, and for the conversions and revenue behind these pages to the ga4-overview skill.
 
 ## Output
 
