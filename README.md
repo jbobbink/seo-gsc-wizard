@@ -164,7 +164,7 @@ Each skill is one `SKILL.md`: a description with the phrasings that trigger it, 
 - Before any tool that writes, list the exact items and ask for confirmation.
 - Every figure names the tool and the date range it came from.
 
-`npm run check` verifies that each skill only references tools that exist on the server (`scripts/mcp-tool-names.txt`), carries the fixed paragraphs, stays provider-neutral and is listed in this README. It runs on every push.
+Every skill is checked against the server's real tool registry before a release: tool names, argument names, the fixed paragraphs, provider-neutral wording and this table.
 
 ## Privacy and security
 
@@ -175,7 +175,6 @@ The plugin talks to `https://mcp.gscwizard.com` over OAuth 2.1; no API keys or c
 ```
 git clone https://github.com/jbobbink/seo-gsc-wizard
 claude --plugin-dir ./seo-gsc-wizard
-npm run check
 ```
 
 Prefer the raw MCP server without the skills? `claude mcp add --transport http gsc-wizard https://mcp.gscwizard.com/mcp`

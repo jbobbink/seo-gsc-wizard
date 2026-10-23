@@ -1,8 +1,0 @@
-{
-  "name": "seo-gsc-wizard",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "check": "node scripts/check-skills.mjs"
-  }
-}
