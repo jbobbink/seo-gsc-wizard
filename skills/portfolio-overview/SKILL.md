@@ -1,6 +1,6 @@
 ---
 name: portfolio-overview
-description: Build an agency or multi-site portfolio view across every Search Console property on a GSC Wizard account. Lists owned and shared properties with their readiness (list_sites, get_account_info), ranks them by clicks against the prior period and names the sites that lost the most (get_cross_site_summary, optionally split by search type and country), reports each client tag's aggregated view (list_tags, get_tag_group_view), and manages tags and dashboard slots after confirmation (manage_tags, set_dashboard_visibility). Use when the user asks "how are all my sites doing", wants a client or portfolio overview, asks which site dropped the most, groups properties by client or tag, or asks which property to look at next.
+description: 'Build an agency or multi-site portfolio view across every Search Console property on a GSC Wizard account. Lists owned and shared properties with their readiness (list_sites, get_account_info), ranks them by clicks against the prior period and names the sites that lost the most (get_cross_site_summary, optionally split by search type and country), reports each client tag''s aggregated view (list_tags, get_tag_group_view), and manages tags and dashboard slots after confirmation (manage_tags, set_dashboard_visibility). Use when the user asks "how are all my sites doing", wants a client or portfolio overview, asks which site dropped the most, groups properties by client or tag, or asks which property to look at next.'
 ---
 
 # Portfolio Overview

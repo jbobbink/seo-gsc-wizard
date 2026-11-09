@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "GSC Wizard plugin for Cursor: Google Search Console, Bing Webmaster, GA4, Merchant Center and Yandex Webmaster SEO analysis via the GSC Wizard MCP server, with 34 guided skills.",
-    "version": "1.1.2"
+    "version": "1.1.3"
   },
   "plugins": [
     {

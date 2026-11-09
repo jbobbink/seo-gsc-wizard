@@ -1,6 +1,6 @@
 ---
 name: ctr-optimization
-description: Find the query and page pairs whose click-through rate underperforms for the position they hold, and turn them into title and meta description rewrite briefs, using the GSC Wizard MCP CTR-curve benchmark comparison, top queries and pages, a query-by-page pull, the striking-distance click upside and an on-page audit of the current titles. Distinct from quick-wins, which merges every opportunity signal: this skill asks only where CTR is low at a stable position and what the title should say. Use when the user asks about CTR optimization, low CTR, "my CTR is bad", title tag rewrites, meta description improvements, snippet optimization, or which titles to rewrite first.
+description: 'Find the query and page pairs whose click-through rate underperforms for the position they hold, and turn them into title and meta description rewrite briefs, using the GSC Wizard MCP CTR-curve benchmark comparison, top queries and pages, a query-by-page pull, the striking-distance click upside and an on-page audit of the current titles. Distinct from quick-wins, which merges every opportunity signal: this skill asks only where CTR is low at a stable position and what the title should say. Use when the user asks about CTR optimization, low CTR, "my CTR is bad", title tag rewrites, meta description improvements, snippet optimization, or which titles to rewrite first.'
 ---
 
 # CTR Optimization

@@ -1,6 +1,6 @@
 ---
 name: content-groups
-description: Define and measure content groups, the URL-rule segments (blog, product, category or locale folders, subdomains) of one Search Console property, with the GSC Wizard MCP tools. Lists the saved groups and their rules, proposes new groups from the site's folder structure with breakdown_by_path, creates, edits or deletes groups after confirmation, and measures clicks, impressions, CTR, position, page count and click share per group plus the uncategorized remainder with get_content_group_performance. Use when the user asks about content groups or site sections, "how is the blog doing versus the product pages", wants to segment pages by URL pattern, or asks which part of the site drives organic traffic.
+description: 'Define and measure content groups, the URL-rule segments (blog, product, category or locale folders, subdomains) of one Search Console property, with the GSC Wizard MCP tools. Lists the saved groups and their rules, proposes new groups from the site''s folder structure with breakdown_by_path, creates, edits or deletes groups after confirmation, and measures clicks, impressions, CTR, position, page count and click share per group plus the uncategorized remainder with get_content_group_performance. Use when the user asks about content groups or site sections, "how is the blog doing versus the product pages", wants to segment pages by URL pattern, or asks which part of the site drives organic traffic.'
 ---
 
 # Content Groups

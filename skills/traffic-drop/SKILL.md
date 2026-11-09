@@ -1,6 +1,6 @@
 ---
 name: traffic-drop
-description: Diagnose why organic traffic dropped on one Search Console property using the GSC Wizard MCP tools. Dates the break with the change-point and anomaly detectors, sizes it with before and after windows, then tests causes in order: Google ranking updates, logged site changes, query and page ranking losses, position-band shifts, device or country segments, reporting artefacts, and deindexed tracked pages. Ends with the most probable cause, a runner-up, what the evidence rules out, and an optional annotation. Use when the user asks "why did my traffic drop", "clicks fell last week", "did the Google update hit me", "lost rankings", "traffic down since", or "what happened on" a date.
+description: 'Diagnose why organic traffic dropped on one Search Console property using the GSC Wizard MCP tools. Dates the break with the change-point and anomaly detectors, sizes it with before and after windows, then tests causes in order: Google ranking updates, logged site changes, query and page ranking losses, position-band shifts, device or country segments, reporting artefacts, and deindexed tracked pages. Ends with the most probable cause, a runner-up, what the evidence rules out, and an optional annotation. Use when the user asks "why did my traffic drop", "clicks fell last week", "did the Google update hit me", "lost rankings", "traffic down since", or "what happened on" a date.'
 ---
 
 # Traffic Drop Diagnosis

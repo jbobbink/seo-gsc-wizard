@@ -1,6 +1,6 @@
 ---
 name: anomaly-check
-description: Quiet daily or weekly health check for one Search Console property, built to run unattended from a scheduler with the GSC Wizard MCP tools and a read-only connection. Scans clicks and impressions for severe anomalies and downward level shifts, compares the last settled week with the one before, checks the indexing tracker for lost pages, and overlaps findings with Google updates. Stays silent with one fixed line unless a threshold is crossed, then reports the dated finding, cause class and next skill to run. Use when the user asks "check my site for anomalies", "anything wrong today", "daily SEO check", "monitor my property", or sets up a scheduled check.
+description: 'Quiet daily or weekly health check for one Search Console property, built to run unattended from a scheduler with the GSC Wizard MCP tools and a read-only connection. Scans clicks and impressions for severe anomalies and downward level shifts, compares the last settled week with the one before, checks the indexing tracker for lost pages, and overlaps findings with Google updates. Stays silent with one fixed line unless a threshold is crossed, then reports the dated finding, cause class and next skill to run. Use when the user asks "check my site for anomalies", "anything wrong today", "daily SEO check", "monitor my property", or sets up a scheduled check.'
 ---
 
 # Anomaly Check

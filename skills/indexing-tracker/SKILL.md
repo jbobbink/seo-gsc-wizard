@@ -1,6 +1,6 @@
 ---
 name: indexing-tracker
-description: Set up and run the GSC Wizard Indexing Tracker for a defined set of URLs (new content, a migration batch, one section) using the GSC Wizard MCP tools: adds the URLs, inspects a first sample against the daily quota, reads back which are indexed and which are not with their verdicts and canonicals, and turns the tracker report into a status with re-check timing. Use when the user says "track indexing of these pages", "watch whether my new posts get indexed", "monitor the migration URLs", "add these URLs to the indexing tracker", "are the tracked pages indexed yet", or wants ongoing indexing monitoring rather than a one-off diagnosis.
+description: 'Set up and run the GSC Wizard Indexing Tracker for a defined set of URLs (new content, a migration batch, one section) using the GSC Wizard MCP tools: adds the URLs, inspects a first sample against the daily quota, reads back which are indexed and which are not with their verdicts and canonicals, and turns the tracker report into a status with re-check timing. Use when the user says "track indexing of these pages", "watch whether my new posts get indexed", "monitor the migration URLs", "add these URLs to the indexing tracker", "are the tracked pages indexed yet", or wants ongoing indexing monitoring rather than a one-off diagnosis.'
 ---
 
 # Indexing Tracker

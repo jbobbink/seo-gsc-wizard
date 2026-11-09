@@ -1,6 +1,6 @@
 ---
 name: query-deep-dive
-description: Build a picture of one query for a Search Console property with the GSC Wizard MCP tools: its click, impression, CTR and position series, the pages Google serves for it, its country and device split, whether several pages cannibalize it, its estimated GA4 value when GA4 is linked, and Bing keyword demand plus the pages Bing ranks for it, condensed into a query scorecard with recommendations. Use when the user names one keyword and asks "how am I doing for X", "why did I lose rankings for X", "which page ranks for X", "deep dive on this keyword", or "what is the demand for X on Bing".
+description: 'Build a picture of one query for a Search Console property with the GSC Wizard MCP tools: its click, impression, CTR and position series, the pages Google serves for it, its country and device split, whether several pages cannibalize it, its estimated GA4 value when GA4 is linked, and Bing keyword demand plus the pages Bing ranks for it, condensed into a query scorecard with recommendations. Use when the user names one keyword and asks "how am I doing for X", "why did I lose rankings for X", "which page ranks for X", "deep dive on this keyword", or "what is the demand for X on Bing".'
 ---
 
 # Query Deep Dive

@@ -1,6 +1,6 @@
 ---
 name: bing-performance
-description: Report Bing search performance for a Search Console property with the GSC Wizard MCP server's Bing Webmaster tools: daily Bing clicks and impressions with a trend and a prior-period comparison, top Bing queries and landing pages, query-to-page pairs, one page's queries, a single query and page pair over time, Bing keyword demand, and the Bing-only versus Google-only winners against the Google top list, and Bing's share next to Google. Use when the user asks "how is my site doing on Bing", "Bing traffic", "Bing vs Google", "top Bing queries", "which pages get Bing traffic", "did this page slip on Bing", "Bing keyword volume", or about Bing Webmaster Tools performance.
+description: 'Report Bing search performance for a Search Console property with the GSC Wizard MCP server''s Bing Webmaster tools: daily Bing clicks and impressions with a trend and a prior-period comparison, top Bing queries and landing pages, query-to-page pairs, one page''s queries, a single query and page pair over time, Bing keyword demand, and the Bing-only versus Google-only winners against the Google top list, and Bing''s share next to Google. Use when the user asks "how is my site doing on Bing", "Bing traffic", "Bing vs Google", "top Bing queries", "which pages get Bing traffic", "did this page slip on Bing", "Bing keyword volume", or about Bing Webmaster Tools performance.'
 ---
 
 # Bing Performance

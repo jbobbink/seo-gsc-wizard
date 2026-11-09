@@ -1,6 +1,6 @@
 ---
 name: experiment-results
-description: Read out an SEO split test for a Search Console property with the experiment tools of the GSC Wizard MCP server: the experiments with their control and variant URL groups, the control-versus-variant click growth with significance test, uplift confidence interval and winner, a sanity check of a few URLs per group, confounders (Google algorithm updates and logged site changes during the test), and a roll-out, extend or stop verdict that can be logged as an annotation. Use when the user asks "how is my SEO test doing", "did the variant win", "read my experiment results", "is the uplift significant", or "should I roll out the change".
+description: 'Read out an SEO split test for a Search Console property with the experiment tools of the GSC Wizard MCP server: the experiments with their control and variant URL groups, the control-versus-variant click growth with significance test, uplift confidence interval and winner, a sanity check of a few URLs per group, confounders (Google algorithm updates and logged site changes during the test), and a roll-out, extend or stop verdict that can be logged as an annotation. Use when the user asks "how is my SEO test doing", "did the variant win", "read my experiment results", "is the uplift significant", or "should I roll out the change".'
 ---
 
 # Experiment Results

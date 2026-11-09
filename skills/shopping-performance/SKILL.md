@@ -1,6 +1,6 @@
 ---
 name: shopping-performance
-description: Analyze how a store's products perform in Google's free listings and against the market, using the GSC Wizard MCP Search Console and Merchant Center tools: merchant-listing performance, organic shopping clicks, impressions and conversions per offer or brand, price position against the market benchmark, best-seller rankings and the demand the catalog does not cover, competitive visibility by country and category, and raw Merchant Center queries when the fixed tools fall short. Use when the user asks "how are my products doing in Shopping", "which offers get the most free-listing clicks", "am I priced above the market", "who are my Shopping competitors", or "which best sellers am I missing".
+description: 'Analyze how a store''s products perform in Google''s free listings and against the market, using the GSC Wizard MCP Search Console and Merchant Center tools: merchant-listing performance, organic shopping clicks, impressions and conversions per offer or brand, price position against the market benchmark, best-seller rankings and the demand the catalog does not cover, competitive visibility by country and category, and raw Merchant Center queries when the fixed tools fall short. Use when the user asks "how are my products doing in Shopping", "which offers get the most free-listing clicks", "am I priced above the market", "who are my Shopping competitors", or "which best sellers am I missing".'
 ---
 
 # Shopping Performance

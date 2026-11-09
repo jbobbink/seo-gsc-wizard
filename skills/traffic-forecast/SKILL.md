@@ -1,6 +1,6 @@
 ---
 name: traffic-forecast
-description: Project future clicks or impressions for a Search Console property with the GSC Wizard MCP tools and put the projection in a seasonal context: the seasonal-decomposition forecast with its auto-selected trendline (optionally a growth target, and a conversion rate plus order value for revenue), the same window last year, the monthly seasonal shape, a level-shift check on the history, and logged or planned changes. Use when the user asks "forecast my traffic", "how many clicks next quarter", "project organic traffic for next year", "what does seasonality look like", "set a realistic traffic target", or "estimate revenue from organic growth".
+description: 'Project future clicks or impressions for a Search Console property with the GSC Wizard MCP tools and put the projection in a seasonal context: the seasonal-decomposition forecast with its auto-selected trendline (optionally a growth target, and a conversion rate plus order value for revenue), the same window last year, the monthly seasonal shape, a level-shift check on the history, and logged or planned changes. Use when the user asks "forecast my traffic", "how many clicks next quarter", "project organic traffic for next year", "what does seasonality look like", "set a realistic traffic target", or "estimate revenue from organic growth".'
 ---
 
 # Traffic Forecast

@@ -1,6 +1,6 @@
 ---
 name: ga4-overview
-description: Review the Google Analytics 4 side of a Search Console property through the GSC Wizard MCP server: which GA4 properties are readable and linked, the traffic overview with its previous-period comparison, the channel mix with the organic share and trend, one breakdown dimension of choice, the key event (conversion) that matters, error pages, and the site's own custom dimensions. Use when the user asks "how is my GA4 traffic", "show me analytics for my site", "sessions and conversions this month", "which pages get traffic in GA4", "is organic growing in analytics", "which pages show a 404", or "what custom dimensions do I have".
+description: 'Review the Google Analytics 4 side of a Search Console property through the GSC Wizard MCP server: which GA4 properties are readable and linked, the traffic overview with its previous-period comparison, the channel mix with the organic share and trend, one breakdown dimension of choice, the key event (conversion) that matters, error pages, and the site''s own custom dimensions. Use when the user asks "how is my GA4 traffic", "show me analytics for my site", "sessions and conversions this month", "which pages get traffic in GA4", "is organic growing in analytics", "which pages show a 404", or "what custom dimensions do I have".'
 ---
 
 # GA4 Overview

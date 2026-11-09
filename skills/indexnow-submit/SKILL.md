@@ -1,6 +1,6 @@
 ---
 name: indexnow-submit
-description: Set up IndexNow for a Search Console property and submit changed URLs with the GSC Wizard MCP tools: checks that a key and its published key file are in place, generates or sets a key when needed, draws the URL set from the user's list or a sitemap, submits up to 100 URLs per batch, reads the outcome (a 202 is accepted pending key validation, not delivered), and reviews the submission history and the Bing URL-submission quota. Use when the user says "submit these URLs to IndexNow", "ping Bing about my new pages", "set up IndexNow", "did my IndexNow submissions go through", or wants Bing told about changed pages.
+description: 'Set up IndexNow for a Search Console property and submit changed URLs with the GSC Wizard MCP tools: checks that a key and its published key file are in place, generates or sets a key when needed, draws the URL set from the user''s list or a sitemap, submits up to 100 URLs per batch, reads the outcome (a 202 is accepted pending key validation, not delivered), and reviews the submission history and the Bing URL-submission quota. Use when the user says "submit these URLs to IndexNow", "ping Bing about my new pages", "set up IndexNow", "did my IndexNow submissions go through", or wants Bing told about changed pages.'
 ---
 
 # IndexNow Submit

@@ -1,6 +1,6 @@
 ---
 name: branded-split
-description: Split a Search Console property's performance into branded and non-branded search with the GSC Wizard MCP tools: totals, branded click share, the daily trend and the top queries per side from get_branded_performance, the brand filter status from get_filter_options, brand variants missing from the saved list spotted with query_top_queries, and the saved branded keywords created or extended with update_site after confirmation, anchored on get_site_summary. Use when the user asks "how much of my traffic is branded", "brand vs non-brand", "is my growth just brand demand or real SEO", "set up or fix my branded keywords", or wants the non-branded trend for a client report.
+description: 'Split a Search Console property''s performance into branded and non-branded search with the GSC Wizard MCP tools: totals, branded click share, the daily trend and the top queries per side from get_branded_performance, the brand filter status from get_filter_options, brand variants missing from the saved list spotted with query_top_queries, and the saved branded keywords created or extended with update_site after confirmation, anchored on get_site_summary. Use when the user asks "how much of my traffic is branded", "brand vs non-brand", "is my growth just brand demand or real SEO", "set up or fix my branded keywords", or wants the non-branded trend for a client report.'
 ---
 
 # Branded versus Non-branded Split

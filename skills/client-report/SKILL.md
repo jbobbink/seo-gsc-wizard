@@ -1,6 +1,6 @@
 ---
 name: client-report
-description: Produce a client-facing SEO report for a Search Console property and share it through the GSC Wizard client portal: generates the full report with generate_seo_report (ready-to-open HTML, a compact digest with a drill per section, or JSON), saves a table of the key rows as a shareable report, adds the client contact, grants access and hands back the share URL with who can open it, and audits or deletes earlier reports. Use when the user says "make a report for my client", "share this with the client", "create a shared report", "give my client access to the report", "who can see my shared reports", or "delete that shared report".
+description: 'Produce a client-facing SEO report for a Search Console property and share it through the GSC Wizard client portal: generates the full report with generate_seo_report (ready-to-open HTML, a compact digest with a drill per section, or JSON), saves a table of the key rows as a shareable report, adds the client contact, grants access and hands back the share URL with who can open it, and audits or deletes earlier reports. Use when the user says "make a report for my client", "share this with the client", "create a shared report", "give my client access to the report", "who can see my shared reports", or "delete that shared report".'
 ---
 
 # Client Report

@@ -1,6 +1,6 @@
 ---
 name: ranking-changes
-description: Compare search rankings between any two periods for one Search Console property with the GSC Wizard MCP tools: new, lost, improved and declined queries and pages, movement between position bands, daily drill-downs on the top movers in each direction, and the Google updates or logged site changes that explain them. The user picks both windows, from last week against the week before to this quarter against the same quarter last year. Use when the user asks "what moved up or down", "winners and losers", "which keywords dropped", "ranking changes since", "compare this month with last month", or "year over year rankings".
+description: 'Compare search rankings between any two periods for one Search Console property with the GSC Wizard MCP tools: new, lost, improved and declined queries and pages, movement between position bands, daily drill-downs on the top movers in each direction, and the Google updates or logged site changes that explain them. The user picks both windows, from last week against the week before to this quarter against the same quarter last year. Use when the user asks "what moved up or down", "winners and losers", "which keywords dropped", "ranking changes since", "compare this month with last month", or "year over year rankings".'
 ---
 
 # Ranking Changes

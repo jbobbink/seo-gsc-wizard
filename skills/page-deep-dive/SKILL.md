@@ -1,6 +1,6 @@
 ---
 name: page-deep-dive
-description: Build a picture of one URL in a Search Console property with the GSC Wizard MCP tools: its daily click, impression, CTR and position series, the queries it wins and loses, its country and device split, stored and live URL inspection results (quota-aware), a single-page on-page audit, Core Web Vitals, and GA4 sessions, bounce rate and key events when GA4 is linked, ending in a page scorecard with recommendations. Use when the user asks "how is this page doing", "deep dive on this URL", "why did this page drop", "what does this page rank for", or names a single URL and wants everything about it.
+description: 'Build a picture of one URL in a Search Console property with the GSC Wizard MCP tools: its daily click, impression, CTR and position series, the queries it wins and loses, its country and device split, stored and live URL inspection results (quota-aware), a single-page on-page audit, Core Web Vitals, and GA4 sessions, bounce rate and key events when GA4 is linked, ending in a page scorecard with recommendations. Use when the user asks "how is this page doing", "deep dive on this URL", "why did this page drop", "what does this page rank for", or names a single URL and wants everything about it.'
 ---
 
 # Page Deep Dive

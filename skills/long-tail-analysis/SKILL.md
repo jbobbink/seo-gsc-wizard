@@ -1,6 +1,6 @@
 ---
 name: long-tail-analysis
-description: Measure how much of a Search Console property lives in the long tail and how much of its traffic is invisible in query and page rows, using the GSC Wizard MCP tools: Head / Chunky Middle / Long Tail page tiers from get_longtail_clusters, the anonymised versus truncated share from analyze_sampling_impact, the ranking-band mix from get_position_distribution, and a raw query pull to characterise tail queries by length and intent. Use when the user asks "how long-tail is my site", "how much of my traffic is hidden or anonymised", "what is in my long tail", "which tail topics deserve a page", or about the head versus tail split.
+description: 'Measure how much of a Search Console property lives in the long tail and how much of its traffic is invisible in query and page rows, using the GSC Wizard MCP tools: Head / Chunky Middle / Long Tail page tiers from get_longtail_clusters, the anonymised versus truncated share from analyze_sampling_impact, the ranking-band mix from get_position_distribution, and a raw query pull to characterise tail queries by length and intent. Use when the user asks "how long-tail is my site", "how much of my traffic is hidden or anonymised", "what is in my long tail", "which tail topics deserve a page", or about the head versus tail split.'
 ---
 
 # Long-tail Analysis

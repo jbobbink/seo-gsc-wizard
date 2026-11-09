@@ -1,6 +1,6 @@
 ---
 name: bing-crawl-health
-description: Check Bing crawl, index and link health for a Search Console property with the GSC Wizard MCP server's Bing Webmaster tools: daily pages crawled and indexed with the response-code breakdown, crawl issues grouped by type (4xx, 5xx, redirects, robots blocks, DNS and timeout errors, malware) with fixes, sitemap and feed status, the most-linked URLs and whether they are healthy, the URL submission quota, and an optional confirmed IndexNow resubmission of fixed pages. Use when the user asks "is Bing crawling my site", "Bing crawl errors", "Bing index count", "Bing sitemap status", "backlinks in Bing", "resubmit to Bing", or "IndexNow".
+description: 'Check Bing crawl, index and link health for a Search Console property with the GSC Wizard MCP server''s Bing Webmaster tools: daily pages crawled and indexed with the response-code breakdown, crawl issues grouped by type (4xx, 5xx, redirects, robots blocks, DNS and timeout errors, malware) with fixes, sitemap and feed status, the most-linked URLs and whether they are healthy, the URL submission quota, and an optional confirmed IndexNow resubmission of fixed pages. Use when the user asks "is Bing crawling my site", "Bing crawl errors", "Bing index count", "Bing sitemap status", "backlinks in Bing", "resubmit to Bing", or "IndexNow".'
 ---
 
 # Bing Crawl Health

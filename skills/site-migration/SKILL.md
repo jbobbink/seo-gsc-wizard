@@ -1,6 +1,6 @@
 ---
 name: site-migration
-description: Check a site migration (a domain move, an HTTP to HTTPS switch, a URL restructure) before and after go-live with the migration tools of the GSC Wizard MCP server: the saved migrations, the health check around go-live (recovery, pace, momentum, projected milestones, URL success, a 0-100 risk score), the before-versus-after query and page winners and losers, the saved old-to-new redirect mappings, a quota-aware inspection of the worst new URLs, and a go-live annotation. Use when the user asks "how is the migration going", "did the site lose traffic after the domain move", "check my redirects", "which old URLs are not recovering", or wants a pre-launch baseline.
+description: 'Check a site migration (a domain move, an HTTP to HTTPS switch, a URL restructure) before and after go-live with the migration tools of the GSC Wizard MCP server: the saved migrations, the health check around go-live (recovery, pace, momentum, projected milestones, URL success, a 0-100 risk score), the before-versus-after query and page winners and losers, the saved old-to-new redirect mappings, a quota-aware inspection of the worst new URLs, and a go-live annotation. Use when the user asks "how is the migration going", "did the site lose traffic after the domain move", "check my redirects", "which old URLs are not recovering", or wants a pre-launch baseline.'
 ---
 
 # Site Migration Check

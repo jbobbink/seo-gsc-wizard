@@ -2,6 +2,11 @@
 
 Users of the Claude Code plugin, the Cursor plugin and the Gemini CLI extension only receive changes when the `version` in all three manifests is bumped, so every entry here corresponds to one bump.
 
+## 1.1.3 (2026-11-09)
+
+- Every skill description is now a single-quoted YAML string. 24 of the 34 had a plain description containing ": ", which strict YAML parsers reject; the skills CLI (`npx skills add`, which also feeds the skills.sh directory) skipped those files without a message, so only 10 skills installed through it. Wording is unchanged.
+- README: install through the skills CLI, from this repository or from the website.
+
 ## 1.1.2 (2026-10-23)
 
 - All repository tooling moved out: the OpenAI skill-bundle build, the skill check script and its tool list, `package.json` and the GitHub Actions workflow now live in the GSC Wizard monorepo and read this repository as a sibling checkout. The repository holds only what the agents load: manifests, skills, icons and docs.

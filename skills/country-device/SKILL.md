@@ -1,6 +1,6 @@
 ---
 name: country-device
-description: Analyse a Search Console property's international and device performance with the GSC Wizard MCP tools: per-country and per-device tables for the current and prior window from query_countries and query_devices, market-specific winning and losing pages and queries from filtered query_search_analytics pulls, the property anchor from get_site_summary, and real-user Core Web Vitals per form factor from get_core_web_vitals. Use when the user asks "which countries drive my traffic", "how do I perform in Germany", "mobile vs desktop", "is mobile dropping", "where is my CTR low for the position I hold", or about hreflang, local content or international SEO.
+description: 'Analyse a Search Console property''s international and device performance with the GSC Wizard MCP tools: per-country and per-device tables for the current and prior window from query_countries and query_devices, market-specific winning and losing pages and queries from filtered query_search_analytics pulls, the property anchor from get_site_summary, and real-user Core Web Vitals per form factor from get_core_web_vitals. Use when the user asks "which countries drive my traffic", "how do I perform in Germany", "mobile vs desktop", "is mobile dropping", "where is my CTR low for the position I hold", or about hreflang, local content or international SEO.'
 ---
 
 # Country and Device Performance

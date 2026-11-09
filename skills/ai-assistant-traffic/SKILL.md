@@ -1,6 +1,6 @@
 ---
 name: ai-assistant-traffic
-description: Measure the traffic and the search queries that AI assistants send to one property from the user's own first-party data via the GSC Wizard MCP server: GA4 sessions, conversions and revenue referred by assistants with their share of all traffic, the Search Console query-shape classification that spots AI-conversation fingerprints (reply artefacts, pivot follow-ups, conversational questions, tracker probes, agent harnesses), the AI-shaped share trend by month or week, and the pages serving those queries. Use when the user asks "how much traffic do I get from AI assistants", "is AI traffic growing", "AI Mode or AI Overviews impact", "LLM referrals in GA4", or "weird long queries in Search Console".
+description: 'Measure the traffic and the search queries that AI assistants send to one property from the user''s own first-party data via the GSC Wizard MCP server: GA4 sessions, conversions and revenue referred by assistants with their share of all traffic, the Search Console query-shape classification that spots AI-conversation fingerprints (reply artefacts, pivot follow-ups, conversational questions, tracker probes, agent harnesses), the AI-shaped share trend by month or week, and the pages serving those queries. Use when the user asks "how much traffic do I get from AI assistants", "is AI traffic growing", "AI Mode or AI Overviews impact", "LLM referrals in GA4", or "weird long queries in Search Console".'
 ---
 
 # AI Assistant Traffic

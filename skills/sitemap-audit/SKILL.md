@@ -1,6 +1,6 @@
 ---
 name: sitemap-audit
-description: Audit sitemap health and coverage for a Search Console property with the GSC Wizard MCP tools: the submitted sitemaps with their errors, warnings and download dates (list_sitemaps), the join of one sitemap's URLs with Search Console metrics to find URLs that never show (get_sitemap_performance), stored inspection verdicts for those suspects without spending quota (list_url_inspections), the Bing side (get_bing_feeds), and, after confirmation, submitting or resubmitting published sitemaps (submit_sitemap). Use when the user asks "is my sitemap ok", "which sitemap URLs get no traffic", "sitemap errors", "resubmit my sitemap", "does Google read my sitemap", or about sitemap coverage.
+description: 'Audit sitemap health and coverage for a Search Console property with the GSC Wizard MCP tools: the submitted sitemaps with their errors, warnings and download dates (list_sitemaps), the join of one sitemap''s URLs with Search Console metrics to find URLs that never show (get_sitemap_performance), stored inspection verdicts for those suspects without spending quota (list_url_inspections), the Bing side (get_bing_feeds), and, after confirmation, submitting or resubmitting published sitemaps (submit_sitemap). Use when the user asks "is my sitemap ok", "which sitemap URLs get no traffic", "sitemap errors", "resubmit my sitemap", "does Google read my sitemap", or about sitemap coverage.'
 ---
 
 # Sitemap Audit

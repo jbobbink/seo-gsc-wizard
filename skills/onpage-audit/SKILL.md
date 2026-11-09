@@ -1,6 +1,6 @@
 ---
 name: onpage-audit
-description: Run a technical on-page audit of a set of pages on a Search Console property with the GSC Wizard MCP tools: pick the URLs from the user's list, the top pages by clicks, or a sitemap, crawl them in batches with audit_onpage_seo (indexability, canonical, titles and meta, headings, links, images, structured data), optionally confirm a canonical mismatch with a quota-aware URL inspection, then report issues grouped by severity with affected URLs and fixes. Use when the user says "audit these pages", "check my on-page SEO", "technical check of my top pages", "are my titles and meta descriptions ok", or asks for a technical review of specific URLs.
+description: 'Run a technical on-page audit of a set of pages on a Search Console property with the GSC Wizard MCP tools: pick the URLs from the user''s list, the top pages by clicks, or a sitemap, crawl them in batches with audit_onpage_seo (indexability, canonical, titles and meta, headings, links, images, structured data), optionally confirm a canonical mismatch with a quota-aware URL inspection, then report issues grouped by severity with affected URLs and fixes. Use when the user says "audit these pages", "check my on-page SEO", "technical check of my top pages", "are my titles and meta descriptions ok", or asks for a technical review of specific URLs.'
 ---
 
 # On-Page Audit

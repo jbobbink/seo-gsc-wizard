@@ -1,6 +1,6 @@
 ---
 name: property-setup
-description: Onboard a new client site into GSC Wizard and get it ready for the other skills; checks the account and plan with get_account_info, inventories list_sites, registers Search Console properties with add_site or creates folder-level ones with create_gsc_property, shows them on the dashboard, sets tags, branded keywords, sitemap URLs and crawl rate with update_site, manages filter presets, unregisters a property on request, and hands back a setup checklist and the first skills to run. Use when the user says "add my site", "onboard a new client", "set up this property", "register example.com", "create a property for /blog/", "set branded keywords", "save a filter preset" or "remove this property".
+description: 'Onboard a new client site into GSC Wizard and get it ready for the other skills; checks the account and plan with get_account_info, inventories list_sites, registers Search Console properties with add_site or creates folder-level ones with create_gsc_property, shows them on the dashboard, sets tags, branded keywords, sitemap URLs and crawl rate with update_site, manages filter presets, unregisters a property on request, and hands back a setup checklist and the first skills to run. Use when the user says "add my site", "onboard a new client", "set up this property", "register example.com", "create a property for /blog/", "set branded keywords", "save a filter preset" or "remove this property".'
 ---
 
 # Property Setup

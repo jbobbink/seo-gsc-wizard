@@ -105,6 +105,7 @@ The same repository works as a plugin or extension elsewhere; all of them connec
 - **Cursor:** install from the Cursor marketplace, or point Cursor at this repository (manifest in `.cursor-plugin/`, server in `mcp.json`).
 - **Gemini CLI:** `gemini extensions install https://github.com/jbobbink/seo-gsc-wizard`, then `/mcp auth gsc-wizard` if the browser does not open on first use.
 - **Cline and other MCP clients:** add the remote server URL above; see [llms-install.md](llms-install.md).
+- **Skills only, any agent:** `npx skills add jbobbink/seo-gsc-wizard` installs the skills into Claude Code, Cursor, Codex and the other agents the [skills CLI](https://skills.sh) supports. It installs no MCP server, so add `https://mcp.gscwizard.com/mcp` to the agent as well. The provider-neutral copies also install from the website: `npx skills add https://www.gscwizard.com`.
 
 ## OpenClaw
 

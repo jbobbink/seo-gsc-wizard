@@ -1,6 +1,6 @@
 ---
 name: merchant-center-health
-description: Check whether the Merchant Center account linked to a Search Console property is healthy and whether its products are eligible for free listings, using the GSC Wizard MCP Merchant Center tools: readable accounts and links, account issues by severity, feed data sources with their latest uploads, and the products invisible in free listings with the reason, ending in a verdict and recommendations. Use when the user asks "is my Merchant Center account ok", "why are my products disapproved", "are my products showing in free listings", "is my feed uploading", "Merchant Center health check", or mentions a suspension, a policy issue or a feed that stopped.
+description: 'Check whether the Merchant Center account linked to a Search Console property is healthy and whether its products are eligible for free listings, using the GSC Wizard MCP Merchant Center tools: readable accounts and links, account issues by severity, feed data sources with their latest uploads, and the products invisible in free listings with the reason, ending in a verdict and recommendations. Use when the user asks "is my Merchant Center account ok", "why are my products disapproved", "are my products showing in free listings", "is my feed uploading", "Merchant Center health check", or mentions a suspension, a policy issue or a feed that stopped.'
 ---
 
 # Merchant Center Health

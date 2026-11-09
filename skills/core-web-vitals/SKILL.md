@@ -1,6 +1,6 @@
 ---
 name: core-web-vitals
-description: Review page experience for a Search Console property from Chrome UX Report field data with the GSC Wizard MCP tools: Core Web Vitals (LCP, INP, CLS) plus FCP and TTFB with ratings, good-share trends and week-over-week regressions via get_core_web_vitals, split by device and by page, tied to the pages that carry the clicks with query_top_pages and to GA4 engagement with get_blended_landing_pages when linked, ending with a vitals table, the pages or templates to fix first, and metric-specific recommendations. Use when the user asks "how are my Core Web Vitals", "is my site slow", "page speed", "LCP", "INP", "CLS", "page experience", or whether a speed fix worked.
+description: 'Review page experience for a Search Console property from Chrome UX Report field data with the GSC Wizard MCP tools: Core Web Vitals (LCP, INP, CLS) plus FCP and TTFB with ratings, good-share trends and week-over-week regressions via get_core_web_vitals, split by device and by page, tied to the pages that carry the clicks with query_top_pages and to GA4 engagement with get_blended_landing_pages when linked, ending with a vitals table, the pages or templates to fix first, and metric-specific recommendations. Use when the user asks "how are my Core Web Vitals", "is my site slow", "page speed", "LCP", "INP", "CLS", "page experience", or whether a speed fix worked.'
 ---
 
 # Core Web Vitals Review

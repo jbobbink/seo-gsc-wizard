@@ -1,6 +1,6 @@
 ---
 name: yandex-performance
-description: Report Yandex Webmaster performance for a Search Console property with the GSC Wizard MCP server's Yandex tools: verification status and canonical mirror, site quality index (SQI), pages in search and excluded pages, open site problems by severity, the top Yandex queries with derived CTR and both position metrics, and the crawl and indexing trend with the pages that appeared in or were removed from Yandex search, with the Google totals alongside for scale, ending with recommendations. Use when the user asks "how is my site doing on Yandex", "Yandex traffic", "SQI", "top Yandex queries", "Yandex indexing", "pages in Yandex search", "Yandex problems", or about Yandex Webmaster.
+description: 'Report Yandex Webmaster performance for a Search Console property with the GSC Wizard MCP server''s Yandex tools: verification status and canonical mirror, site quality index (SQI), pages in search and excluded pages, open site problems by severity, the top Yandex queries with derived CTR and both position metrics, and the crawl and indexing trend with the pages that appeared in or were removed from Yandex search, with the Google totals alongside for scale, ending with recommendations. Use when the user asks "how is my site doing on Yandex", "Yandex traffic", "SQI", "top Yandex queries", "Yandex indexing", "pages in Yandex search", "Yandex problems", or about Yandex Webmaster.'
 ---
 
 # Yandex Performance
